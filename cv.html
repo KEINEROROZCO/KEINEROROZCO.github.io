@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Keiner Orozco | Desarrollador Web Full-Stack</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #050816;
+            --cyan: #00f5d4;
+            --pink: #ff2d78;
+            --purple: #a855f7;
+            --white: #f0f4ff;
+            --text-sec: rgba(240,244,255,0.6);
+            --text-muted: rgba(240,244,255,0.35);
+            --glass-border: rgba(255,255,255,0.06);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: #fff; color: #1a1a1a; }
+            .cv-container { box-shadow: none; border: none; background: #fff; }
+            .cv-header { background: #1a1a2e !important; }
+            .print-btn, .back-link { display: none !important; }
+            .skill-bar-fill { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            a { color: #0066cc; }
+            .section-icon { background: #f0f0f0 !important; color: #1a1a2e !important; }
+        }
+
+        .cv-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Top Action Bar */
+        .cv-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--cyan); }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 100px;
+            border: none;
+            background: var(--cyan);
+            color: var(--bg);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(0,245,212,0.2);
+        }
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0,245,212,0.4);
+        }
+
+        /* CV Container */
+        .cv-container {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .cv-header {
+            background: linear-gradient(135deg, rgba(0,245,212,0.08) 0%, rgba(168,85,247,0.06) 50%, rgba(255,45,120,0.04) 100%);
+            padding: 48px;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(0,245,212,0.08), transparent);
+            border-radius: 50%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-name h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .header-name .role {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--cyan);
+            letter-spacing: 1px;
+        }
+
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            font-size: 0.82rem;
+        }
+        .header-contact a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .header-contact a:hover { color: var(--cyan); }
+        .header-contact i { 
+            width: 18px; 
+            text-align: center;
+            color: var(--cyan);
+        }
+
+        .header-summary {
+            margin-top: 24px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-sec);
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Sections */
+        .cv-body {
+            padding: 40px 48px;
+        }
+
+        .cv-section {
+            margin-bottom: 40px;
+        }
+        .cv-section:last-child { margin-bottom: 0; }
+
+        .cv-section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .section-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,245,212,0.08);
+            color: var(--cyan);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .cv-section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Experience / Education Items */
+        .timeline-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+        }
+        .timeline-item:last-child { border-bottom: none; }
+
+        .timeline-date {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--cyan);
+            padding-top: 3px;
+        }
+        .timeline-date .location {
+            display: block;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .timeline-content .company {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            margin-bottom: 10px;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline-content li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--text-sec);
+            margin-bottom: 4px;
+        }
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+        }
+
+        /* Skills Grid */
+        .skills-cv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .skill-cv-category h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+        .skill-cv-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .skill-cv-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .skill-cv-name {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            min-width: 100px;
+        }
+        .skill-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 100px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            transition: width 1s ease;
+        }
+
+        /* Languages & extras */
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .extra-item {
+            padding: 16px;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .extra-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .extra-item p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Projects list */
+        .project-cv-item {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .project-cv-item:last-child { border-bottom: none; }
+        .project-cv-item h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .project-cv-item p {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .cv-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .cv-tag {
+            font-size: 0.65rem;
+            padding: 3px 10px;
+            border: 1px solid rgba(0,245,212,0.15);
+            border-radius: 100px;
+            color: var(--cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-header { padding: 32px 24px; }
+            .cv-body { padding: 32px 24px; }
+            .header-top { flex-direction: column; gap: 24px; }
+            .header-contact { align-items: flex-start; }
+            .header-name h1 { font-size: 2rem; }
+            .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+            .skills-cv-grid { grid-template-columns: 1fr; }
+            .extras-grid { grid-template-columns: 1fr; }
+            .cv-actions { flex-direction: column; gap: 16px; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-wrapper">
+
+        <!-- Actions -->
+        <div class="cv-actions">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver al Portafolio
+            </a>
+            <button class="print-btn" onclick="window.print()">
+                <i class="fa-solid fa-download"></i>
+                Descargar PDF
+            </button>
+        </div>
+
+        <!-- CV -->
+        <div class="cv-container">
+
+            <!-- HEADER -->
+            <div class="cv-header">
+                <div class="header-top">
+                    <div class="header-name">
+                        <h1>Keiner Orozco</h1>
+                        <div class="role">Desarrollador Web Full-Stack</div>
+                    </div>
+                    <div class="header-contact">
+                        <a href="mailto:orozcokeiner200@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            orozcokeiner200@gmail.com
+                        </a>
+                        <a href="https://wa.me/573143748137">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            +57 314 374 8137
+                        </a>
+                        <a href="https://github.com/KEINEROROZCO" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            github.com/KEINEROROZCO
+                        </a>
+                        <a href="https://www.linkedin.com/in/keiner-orozco-898012331" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Colombia 🇨🇴
+                        </a>
+                    </div>
+                </div>
+                <p class="header-summary">
+                    Desarrollador web full-stack apasionado por crear experiencias digitales de alto impacto. 
+                    Con sólido dominio en tecnologías frontend y backend, combino diseño impecable con 
+                    funcionalidad excepcional. Experiencia en proyectos reales de e-commerce, sitios corporativos 
+                    y automatización de procesos. Busco constantemente nuevas tecnologías para ofrecer 
+                    soluciones innovadoras y escalables.
+                </p>
+            </div>
+
+            <div class="cv-body">
+
+                <!-- HABILIDADES TÉCNICAS -->
+                <div class="cv-section">
+                    <div class="cv-section-header">
+                        <div class="section-icon"><i class="fa-solid fa-code"></i></div>
+                        <h2>Habilidades Técnicas</h2>
+                    </div>
+                    <div class="skills-cv-grid">
+                        <div class="skill-cv-category">
+                            <h4>Frontend</h4>
+                            <div class="skill-cv-items">
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">HTML5</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">CSS3 / SASS</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">JavaScript</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">React</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-cv-category">
+                            <h4>Backend & Otros</h4>
+                            <div class="skill-cv-items">
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">PHP</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">Python</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">MySQL</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill-cv-row">
+                                    <span class="skill-cv-name">Git / GitHub</span>
+                                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTOS DESTACADOS -->
+                <div class="cv-section">
+                    <div class="cv-section-header">
+                        <div class="section-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h2>Proyectos Destacados</h2>
+                    </div>
+
+                    <div class="project-cv-item">
+                        <h3>Tienda de Barrio Online — Sistema de Inventario y Ventas</h3>
+                        <p>
+                            Desarrollo completo de un sistema web de gestión para una tienda local. 
+                            Implementación de CRUD de productos, control de stock en tiempo real, 
+                            sistema de ventas con carrito de compras, panel de administración con 
+                            estadísticas, y base de datos relacional optimizada.
+                        </p>
+                        <div class="cv-tags">
+                            <span class="cv-tag">PHP</span>
+                            <span class="cv-tag">MySQL</span>
+                            <span class="cv-tag">JavaScript</span>
+                            <span class="cv-tag">HTML5 / CSS3</span>
+                            <span class="cv-tag">MVC</span>
+                        </div>
+                    </div>
+
+                    <div class="project-cv-item">
+                        <h3>Web para Restaurante — Menú Digital y Reservas</h3>
+                        <p>
+                            Diseño y desarrollo de un sitio web con menú digital interactivo con 
+                            categorías y filtros, sistema de reservas online con confirmación por email, 
+                            galería de imágenes optimizada con lazy loading, y diseño responsivo 
+                            optimizado para tablets y móviles.
+                        </p>
+                        <div class="cv-tags">
+                            <span class="cv-tag">JavaScript</span>
+                            <span class="cv-tag">HTML5 / CSS3</span>
+                            <span class="cv-tag">PHP</span>
+                            <span class="cv-tag">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="project-cv-item">
+                        <h3>Web para Peluquería — Sistema de Citas Online</h3>
+                        <p>
+                            Sitio web profesional con sistema de citas integrado, portafolio visual 
+                            de estilos y trabajos realizados, formulario de contacto avanzado con 
+                            validación, y optimización SEO para posicionamiento local.
+                        </p>
+                        <div class="cv-tags">
+                            <span class="cv-tag">HTML5 / CSS3</span>
+                            <span class="cv-tag">JavaScript</span>
+                            <span class="cv-tag">PHP</span>
+                            <span class="cv-tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICIOS QUE OFREZCO -->
+                <div class="cv-section">
+                    <div class="cv-section-header">
+                        <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <h2>Servicios Profesionales</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Desarrollo Web
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Desarrollo Full-Stack</h3>
+                            <ul>
+                                <li>Creación de aplicaciones web completas (frontend + backend)</li>
+                                <li>Diseño de interfaces responsivas y accesibles</li>
+                                <li>Integración con bases de datos MySQL</li>
+                                <li>APIs RESTful y arquitectura MVC</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Automatización
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Automatización con Python</h3>
+                            <ul>
+                                <li>Scripts para automatización de tareas repetitivas</li>
+                                <li>Web scraping y procesamiento de datos</li>
+                                <li>Integración con APIs y servicios de IA</li>
+                                <li>Bots inteligentes para optimizar procesos de negocio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Soluciones
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Soluciones a Medida</h3>
+                            <ul>
+                                <li>Software personalizado para necesidades empresariales</li>
+                                <li>E-commerce y tiendas online</li>
+                                <li>Sistemas de gestión y paneles administrativos</li>
+                                <li>Soporte técnico y mantenimiento continuo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPETENCIAS ADICIONALES -->
+                <div class="cv-section">
+                    <div class="cv-section-header">
+                        <div class="section-icon"><i class="fa-solid fa-star"></i></div>
+                        <h2>Competencias Adicionales</h2>
+                    </div>
+                    <div class="extras-grid">
+                        <div class="extra-item">
+                            <h4>🇪🇸 Español</h4>
+                            <p>Nativo</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>🇬🇧 Inglés</h4>
+                            <p>Lectura técnica</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>📱 Responsive</h4>
+                            <p>Mobile-First Design</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>🔐 Seguridad</h4>
+                            <p>Buenas prácticas web</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>🎨 UI/UX</h4>
+                            <p>Diseño de interfaces</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>🚀 SEO</h4>
+                            <p>Posicionamiento web</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMACIÓN -->
+                <div class="cv-section">
+                    <div class="cv-section-header">
+                        <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h2>Formación</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Continua
+                            <span class="location">Online</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Desarrollo Web Full-Stack</h3>
+                            <div class="company">Formación autodidacta + cursos especializados</div>
+                            <ul>
+                                <li>HTML5, CSS3 y JavaScript avanzado</li>
+                                <li>PHP y MySQL para desarrollo backend</li>
+                                <li>Python para automatización e IA</li>
+                                <li>React y frameworks modernos</li>
+                                <li>Git, GitHub y control de versiones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

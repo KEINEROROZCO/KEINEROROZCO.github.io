@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keyner Orozco — Desarrollador Web Full-Stack. Diseño y funcionalidad en cada línea de código. Experto en HTML, CSS, JavaScript, PHP y Python.">
+    <meta name="keywords" content="Keyner Orozco, desarrollador web, full-stack, frontend, backend, PHP, JavaScript, Python, Colombia">
+    <meta name="author" content="Keiner Orozco">
+    <meta name="robots" content="index, follow">
+    <title>Keyner Orozco — Desarrollador Web Full-Stack</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <meta name="theme-color" content="#050816">
+
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Keyner Orozco — Desarrollador Web Full-Stack">
+    <meta property="og:description" content="Desarrollador web full-stack que transforma ideas en experiencias digitales extraordinarias. Experto en HTML, CSS, JavaScript, PHP y Python. Colombia 🇨🇴">
+    <meta property="og:image" content="img/og-preview.png">
+    <meta property="og:url" content="https://keinerorozco.github.io">
+    <meta property="og:site_name" content="Keyner Orozco Portfolio">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keyner Orozco — Desarrollador Web Full-Stack">
+    <meta name="twitter:description" content="Desarrollador web full-stack que transforma ideas en experiencias digitales extraordinarias.">
+    <meta name="twitter:image" content="img/og-preview.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://keinerorozco.github.io">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-inner">
+        <div class="loader-logo">
+            <span class="loader-k">K</span>
+            <span class="loader-dot">.</span>
+            <span class="loader-o">O</span>
+        </div>
+        <div class="loader-bar-track">
+            <div class="loader-bar-fill" id="loader-fill"></div>
+        </div>
+        <div class="loader-text">Cargando experiencia...</div>
+    </div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+<canvas id="cursor-trail-canvas"></canvas>
+
+<!-- GRADIENT ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- GRID OVERLAY -->
+<div class="grid-overlay"></div>
+
+<!-- NOISE -->
+<canvas id="noise-canvas" class="noise-layer"></canvas>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- NAVIGATION -->
+<header id="main-header">
+    <a href="#inicio" class="logo" id="nav-logo">
+        <span class="logo-k">K</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-o">O</span>
+    </a>
+    <nav id="nav-desktop">
+        <ul>
+            <li><a href="#inicio" data-text="Inicio">Inicio</a></li>
+            <li><a href="#sobre-mi" data-text="Sobre mí">Sobre mí</a></li>
+            <li><a href="#habilidades" data-text="Skills">Skills</a></li>
+            <li><a href="#proyectos" data-text="Proyectos">Proyectos</a></li>
+            <li><a href="#servicios" data-text="Servicios">Servicios</a></li>
+            <li><a href="#contacto" data-text="Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <a href="#contacto" class="nav-cta" id="nav-cta">
+        <span>Hablemos</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+        </svg>
+    </a>
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-bg"></div>
+    <div class="mobile-menu-content">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#habilidades">Skills</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</div>
+
+<!-- ========================= HERO ========================= -->
+<section id="inicio" class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge anim-item">
+                <span class="badge-dot"></span>
+                <span>Disponible para proyectos</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line hero-line-1 anim-item">
+                    <span class="char-wrap" data-text="Keyner">Keyner</span>
+                </span>
+                <span class="hero-line hero-line-2 anim-item">
+                    <span class="char-wrap stroke-text" data-text="Orozco">Orozco</span>
+                </span>
+            </h1>
+            <p class="hero-desc anim-item">
+                Desarrollador web full-stack que transforma ideas en
+                <span class="highlight-text">experiencias digitales extraordinarias</span>.
+                Cada línea de código cuenta una historia.
+            </p>
+            <div class="hero-actions anim-item">
+                <a href="#proyectos" class="btn-magic" id="hero-btn-projects">
+                    <span class="btn-magic-bg"></span>
+                    <span class="btn-magic-text">
+                        <span>Ver proyectos</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </a>
+                <a href="cv.html" target="_blank" class="btn-glass" id="hero-btn-cv">
+                    <i class="fa-solid fa-download" style="margin-right: 8px;"></i>
+                    <span>Descargar CV</span>
+                </a>
+                <a href="#contacto" class="btn-glass" id="hero-btn-contact">
+                    <span>Contáctame</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-stats-float anim-item">
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Proyectos<br>Completados</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-plus">+</div>
+                <div class="stat-label">Tecnologías<br>Dominadas</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number-text">∞</div>
+                <div class="stat-label">Pasión por<br>el código</div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </div>
+
+    <!-- Floating geometric shapes -->
+    <div class="geo-shapes">
+        <div class="geo geo-1"></div>
+        <div class="geo geo-2"></div>
+        <div class="geo geo-3"></div>
+        <div class="geo geo-4"></div>
+    </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <div class="marquee-item">Desarrollo Web</div>
+        <div class="marquee-item">Frontend</div>
+        <div class="marquee-item">Backend</div>
+        <div class="marquee-item">Full Stack</div>
+        <div class="marquee-item">PHP</div>
+        <div class="marquee-item">JavaScript</div>
+        <div class="marquee-item">Python</div>
+        <div class="marquee-item">Automatización</div>
+        <div class="marquee-item">Soluciones a Medida</div>
+        <div class="marquee-item">Desarrollo Web</div>
+        <div class="marquee-item">Frontend</div>
+        <div class="marquee-item">Backend</div>
+        <div class="marquee-item">Full Stack</div>
+        <div class="marquee-item">PHP</div>
+        <div class="marquee-item">JavaScript</div>
+        <div class="marquee-item">Python</div>
+        <div class="marquee-item">Automatización</div>
+        <div class="marquee-item">Soluciones a Medida</div>
+    </div>
+</div>
+
+<!-- ========================= SOBRE MI ========================= -->
+<section id="sobre-mi">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number reveal-item">01</span>
+            <span class="section-tag reveal-item">Sobre mí</span>
+        </div>
+        <h2 class="section-title reveal-item">
+            Pasión por el <span class="gradient-text">código</span>
+        </h2>
+
+        <div class="about-layout">
+            <div class="about-left reveal-item">
+                <p class="about-paragraph">
+                    Soy un desarrollador web apasionado por construir soluciones tecnológicas de 
+                    <strong>vanguardia</strong>. Mi enfoque combina un diseño impecable con 
+                    funcionalidad excepcional para crear experiencias de usuario que dejan huella.
+                </p>
+                <p class="about-paragraph">
+                    Con dominio sólido en <strong>HTML, CSS, JavaScript, PHP</strong> y <strong>Python</strong>, 
+                    exploro constantemente nuevas tecnologías para transformar ideas complejas en 
+                    realidades digitales elegantes y eficientes.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h4>Rápido & Eficiente</h4>
+                            <p>Código optimizado para máximo rendimiento</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <div>
+                            <h4>Diseño Impactante</h4>
+                            <p>Interfaces que cautivan y convierten</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h4>Código Seguro</h4>
+                            <p>Mejores prácticas de seguridad web</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contacto" class="btn-glass" style="margin-top: 24px; display: inline-flex;">
+                    <span>Hablemos →</span>
+                </a>
+            </div>
+            <div class="about-right reveal-item">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="editor-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="editor-filename">keyner.js</span>
+                        <div class="editor-tabs">
+                            <span class="tab active">keyner.js</span>
+                        </div>
+                    </div>
+                    <div class="editor-body">
+                        <div class="line-numbers">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                            <span>11</span><span>12</span><span>13</span>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line"><span class="kw">const</span> <span class="fn">keyner</span> = {</div>
+                            <div class="code-line indent"><span class="prop">role</span>: <span class="str">"Full-Stack Dev"</span>,</div>
+                            <div class="code-line indent"><span class="prop">location</span>: <span class="str">"Colombia 🇨🇴"</span>,</div>
+                            <div class="code-line indent"><span class="prop">stack</span>: [</div>
+                            <div class="code-line indent-2"><span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"JS"</span>,</div>
+                            <div class="code-line indent-2"><span class="str">"PHP"</span>, <span class="str">"Python"</span></div>
+                            <div class="code-line indent">],</div>
+                            <div class="code-line indent"><span class="prop">available</span>: <span class="bool">true</span>,</div>
+                            <div class="code-line indent"><span class="fn">build</span>: (<span class="param">idea</span>) => {</div>
+                            <div class="code-line indent-2"><span class="kw">return</span> <span class="fn">elegantCode</span>(idea);</div>
+                            <div class="code-line indent">}</div>
+                            <div class="code-line">};</div>
+                            <div class="code-line"><span class="cm">// Siempre aprendiendo...</span><span class="typing-cursor"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Corner decorations -->
+                <div class="corner-accent top-left"></div>
+                <div class="corner-accent bottom-right"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= HABILIDADES ========================= -->
+<section id="habilidades">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number reveal-item">02</span>
+            <span class="section-tag reveal-item">Habilidades</span>
+        </div>
+        <h2 class="section-title reveal-item">
+            Mi <span class="gradient-text">stack</span> tecnológico
+        </h2>
+
+        <div class="skills-grid">
+            <div class="skill-card reveal-item" data-skill="95">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="95" style="--percent: 95"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">HTML5</h3>
+                <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="90">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="90" style="--percent: 90"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">CSS3</h3>
+                <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="85">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="85" style="--percent: 85"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">JavaScript</h3>
+                <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="80">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="80" style="--percent: 80"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-php"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">PHP</h3>
+                <span class="skill-level">Intermedio-Alto</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="75">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="75" style="--percent: 75"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">Python</h3>
+                <span class="skill-level">Intermedio-Alto</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="85">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="85" style="--percent: 85"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">MySQL</h3>
+                <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="80">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="80" style="--percent: 80"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">Git</h3>
+                <span class="skill-level">Intermedio-Alto</span>
+            </div>
+            <div class="skill-card reveal-item" data-skill="70">
+                <div class="skill-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                        <circle cx="50" cy="50" r="42" class="ring-fill" data-percent="70" style="--percent: 70"/>
+                    </svg>
+                    <div class="skill-ring-icon">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                </div>
+                <h3 class="skill-name">React</h3>
+                <span class="skill-level">Intermedio</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= PROYECTOS ========================= -->
+<section id="proyectos">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number reveal-item">03</span>
+            <span class="section-tag reveal-item">Proyectos</span>
+        </div>
+        <h2 class="section-title reveal-item">
+            Trabajo <span class="gradient-text">destacado</span>
+        </h2>
+
+        <div class="projects-showcase">
+            <div class="project-card-v2 reveal-item" data-tilt>
+                <div class="project-image">
+                    <img src="img/project-store.png" alt="Tienda de Barrio Online" loading="lazy">
+                    <div class="project-overlay">
+                        <span class="project-view-btn">
+                            <i class="fa-solid fa-eye"></i>
+                            Ver proyecto
+                        </span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-num">01</span>
+                    <h3>Tienda de Barrio Online</h3>
+                    <p>Sistema de inventario y ventas para una tienda local, con gestión de productos, control de stock y base de datos integrada.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="project-card-glow"></div>
+            </div>
+
+            <div class="project-card-v2 reveal-item" data-tilt>
+                <div class="project-image">
+                    <img src="img/project-restaurant.png" alt="Web para Restaurante" loading="lazy">
+                    <div class="project-overlay">
+                        <span class="project-view-btn">
+                            <i class="fa-solid fa-eye"></i>
+                            Ver proyecto
+                        </span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-num">02</span>
+                    <h3>Web para Restaurante</h3>
+                    <p>Página web con menú digital interactivo, sistema de reservas online y galería de imágenes optimizada.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">PHP</span>
+                    </div>
+                </div>
+                <div class="project-card-glow"></div>
+            </div>
+
+            <div class="project-card-v2 reveal-item" data-tilt>
+                <div class="project-image">
+                    <img src="img/project-salon.png" alt="Web para Peluquería" loading="lazy">
+                    <div class="project-overlay">
+                        <span class="project-view-btn">
+                            <i class="fa-solid fa-eye"></i>
+                            Ver proyecto
+                        </span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-num">03</span>
+                    <h3>Web para Peluquería</h3>
+                    <p>Sitio web completo con sistema de citas, portafolio de estilos y formulario de contacto avanzado.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                    </div>
+                </div>
+                <div class="project-card-glow"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= SERVICIOS ========================= -->
+<section id="servicios">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number reveal-item">04</span>
+            <span class="section-tag reveal-item">Servicios</span>
+        </div>
+        <h2 class="section-title reveal-item">
+            Lo que puedo hacer <span class="gradient-text">por ti</span>
+        </h2>
+
+        <div class="services-grid">
+            <div class="service-card-v2 reveal-item">
+                <div class="service-icon-wrap cyan">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="service-num">01</span>
+                <h3>Desarrollo Web Full-Stack</h3>
+                <p>Creación de aplicaciones web completas, desde la interfaz hasta el servidor. Código limpio, escalable y mantenible.</p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-check"></i> Frontend responsivo</span>
+                    <span><i class="fa-solid fa-check"></i> Backend robusto</span>
+                    <span><i class="fa-solid fa-check"></i> Base de datos</span>
+                </div>
+                <div class="service-card-border"></div>
+            </div>
+
+            <div class="service-card-v2 reveal-item">
+                <div class="service-icon-wrap pink">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="service-num">02</span>
+                <h3>Automatización Inteligente</h3>
+                <p>Optimización de procesos mediante scripts y bots con IA. Ahorra tiempo y reduce errores humanos en tu negocio.</p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-check"></i> Scripts Python</span>
+                    <span><i class="fa-solid fa-check"></i> Bots inteligentes</span>
+                    <span><i class="fa-solid fa-check"></i> Integración IA</span>
+                </div>
+                <div class="service-card-border"></div>
+            </div>
+
+            <div class="service-card-v2 reveal-item">
+                <div class="service-icon-wrap purple">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <span class="service-num">03</span>
+                <h3>Soluciones a Medida</h3>
+                <p>Desarrollo de software personalizado para las necesidades únicas de tu empresa. Cada proyecto es único, cada solución también.</p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-check"></i> Análisis de necesidades</span>
+                    <span><i class="fa-solid fa-check"></i> Diseño personalizado</span>
+                    <span><i class="fa-solid fa-check"></i> Soporte continuo</span>
+                </div>
+                <div class="service-card-border"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= CONTACTO ========================= -->
+<section id="contacto">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number reveal-item">05</span>
+            <span class="section-tag reveal-item">Contacto</span>
+        </div>
+        <h2 class="section-title reveal-item">
+            ¿Tienes un <span class="gradient-text">proyecto</span>?
+        </h2>
+
+        <div class="contact-layout">
+            <div class="contact-left reveal-item">
+                <p class="contact-desc">
+                    Estoy disponible para proyectos freelance y colaboraciones. 
+                    Si tienes una idea, cuéntamela y la convertimos en realidad.
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:orozcokeiner200@gmail.com" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-card-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">orozcokeiner200@gmail.com</span>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-arrow">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-card-icon" style="background: rgba(37, 211, 102, 0.1); color: #25d366;">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">WhatsApp</span>
+                            <span class="contact-card-value">+57 314 374 8137</span>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-arrow">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/KEINEROROZCO" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-card-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">GitHub</span>
+                            <span class="contact-card-value">github.com/KEINEROROZCO</span>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-arrow">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/keiner-orozco-898012331" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-card-icon" style="background: rgba(10, 102, 194, 0.1); color: #0a66c2;">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-value">Keiner Orozco</span>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-arrow">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right reveal-item">
+                <form id="contact-form" action="https://formsubmit.co/orozcokeiner200@gmail.com" method="POST" class="contact-form">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://keinerorozco.github.io/#contacto">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            <span class="field-line"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            <span class="field-line"></span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+                        <span class="field-line"></span>
+                    </div>
+                    <button type="submit" class="btn-magic submit-btn" id="submit-btn">
+                        <span class="btn-magic-bg"></span>
+                        <span class="btn-magic-text">
+                            <span>Enviar Mensaje</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </span>
+                    </button>
+                    <div id="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <span class="logo-k">K</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-o">O</span>
+            </div>
+            <div class="footer-social">
+                <a href="mailto:orozcokeiner200@gmail.com" aria-label="Email" target="_blank" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/573143748137" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://github.com/KEINEROROZCO" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/keiner-orozco-898012331" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Keyner Orozco — Creado con <span class="gradient-text">pasión</span> e innovación</p>
+            <p class="footer-sub">Desarrollador Web · Colombia 🇨🇴</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

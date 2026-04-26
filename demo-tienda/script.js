@@ -35,11 +35,12 @@ const magneticBtns = document.querySelectorAll('.magnetic-btn');
 magneticBtns.forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
         const position = btn.getBoundingClientRect();
-        const x = e.pageX - position.left - position.width / 2;
-        const y = e.pageY - position.top - position.height / 2;
+        // Use clientX/clientY instead of pageX/pageY to avoid scroll jumps
+        const x = e.clientX - position.left - position.width / 2;
+        const y = e.clientY - position.top - position.height / 2;
         
-        // Move button slightly towards cursor
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        // Move button smoothly towards cursor with subtle multiplier
+        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
     });
     
     btn.addEventListener('mouseleave', () => {
@@ -74,20 +75,24 @@ window.addEventListener('scroll', () => {
     showcaseImg.style.transform = `translateY(${scrolled * 0.05}px) rotate(${scrolled * 0.02}deg)`;
 });
 
-// 6. Expanded Database (12 Products)
+// 6. Expanded Database (16 Products with HD Imagery)
 const productDB = [
-    { id: 1, title: "Lumina Air Max", price: 349.99, img: "img/headphones.png", cat: "audio", desc: "Acústica de vanguardia. Driver de titanio de 50mm para sonido Hi-Fi.", badge: "NEW", class: "" },
-    { id: 2, title: "Lumina Watch Ultra", price: 499.99, img: "img/headphones.png", cat: "wearables", desc: "Caja de titanio aeroespacial. Cristal de zafiro inrayable. GPS precisión L1+L5.", badge: "TOP", class: "hue-shift-1" },
-    { id: 3, title: "Lumina Pods Pro", price: 199.99, img: "img/headphones.png", cat: "audio", desc: "Cancelación de ruido adaptativa que escanea tu oído interno para ajustar el sonido.", badge: "", class: "hue-shift-2" },
-    { id: 4, title: "Lumina Core PC", price: 1299.99, img: "img/headphones.png", cat: "gaming", desc: "Potencia bruta en un chasis de aluminio unibody de 5 litros. Refrigeración líquida.", badge: "", class: "hue-shift-3" },
-    { id: 5, title: "Lumina Studio Mic", price: 149.99, img: "img/headphones.png", cat: "audio", desc: "Micrófono de condensador con interfaz integrada y patrón polar ajustable.", badge: "", class: "" },
-    { id: 6, title: "Lumina Mech Board", price: 179.99, img: "img/headphones.png", cat: "gaming", desc: "Teclado mecánico custom de aluminio 60%. Switches magnéticos regulables.", badge: "PRO", class: "hue-shift-4" },
-    { id: 7, title: "Lumina Fit Tracker", price: 89.99, img: "img/headphones.png", cat: "wearables", desc: "Minimalismo extremo. Mide frecuencia cardíaca, SpO2 y sueño sin pantallas molestas.", badge: "", class: "hue-shift-1" },
-    { id: 8, title: "Lumina Soundbar", price: 399.99, img: "img/headphones.png", cat: "audio", desc: "Dolby Atmos 7.1.2 en una barra ultra delgada con subwoofer inalámbrico invisible.", badge: "OFERTA", class: "hue-shift-2" },
-    { id: 9, title: "Lumina Apex Mouse", price: 119.99, img: "img/headphones.png", cat: "gaming", desc: "Ratón ultraligero de 45g con aleación de magnesio y polling rate de 8000Hz.", badge: "", class: "hue-shift-3" },
-    { id: 10, title: "Lumina Vision VR", price: 599.99, img: "img/headphones.png", cat: "gaming", desc: "Gafas de realidad mixta con pantallas Micro-OLED 4K por ojo.", badge: "NEW", class: "" },
-    { id: 11, title: "Lumina Active Buds", price: 129.99, img: "img/headphones.png", cat: "audio", desc: "Diseñados para atletas. Agarre seguro, resistencia IPX8 y modo transparencia.", badge: "", class: "hue-shift-4" },
-    { id: 12, title: "Lumina Watch SE", price: 249.99, img: "img/headphones.png", cat: "wearables", desc: "Las funciones esenciales que amas en un diseño renovado y accesible.", badge: "", class: "hue-shift-1" }
+    { id: 1, title: "Lumina Air Max", price: 349.99, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80", cat: "audio", desc: "Acústica de vanguardia. Driver de titanio de 50mm para sonido Hi-Fi.", badge: "NEW", class: "" },
+    { id: 2, title: "Lumina Watch Ultra", price: 499.99, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80", cat: "wearables", desc: "Caja de titanio aeroespacial. Cristal de zafiro inrayable. GPS precisión L1+L5.", badge: "TOP", class: "" },
+    { id: 3, title: "Lumina Pods Pro", price: 199.99, img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80", cat: "audio", desc: "Cancelación de ruido adaptativa que escanea tu oído interno para ajustar el sonido.", badge: "", class: "" },
+    { id: 4, title: "Lumina Mech Board", price: 179.99, img: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80", cat: "gaming", desc: "Teclado mecánico custom de aluminio 60%. Switches magnéticos regulables.", badge: "PRO", class: "" },
+    { id: 5, title: "Lumina Studio Mic", price: 149.99, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80", cat: "audio", desc: "Micrófono de condensador con interfaz integrada y patrón polar ajustable.", badge: "", class: "" },
+    { id: 6, title: "Lumina Soundbar", price: 399.99, img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80", cat: "audio", desc: "Dolby Atmos 7.1.2 en una barra ultra delgada con subwoofer inalámbrico invisible.", badge: "OFERTA", class: "" },
+    { id: 7, title: "Lumina Apex Mouse", price: 119.99, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80", cat: "gaming", desc: "Ratón ultraligero de 45g con aleación de magnesio y polling rate de 8000Hz.", badge: "", class: "" },
+    { id: 8, title: "Lumina Vision VR", price: 599.99, img: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=800&q=80", cat: "gaming", desc: "Gafas de realidad mixta con pantallas Micro-OLED 4K por ojo.", badge: "NEW", class: "" },
+    { id: 9, title: "Lumina Drone X", price: 899.99, img: "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?auto=format&fit=crop&w=800&q=80", cat: "tech", desc: "Dron compacto con cámara 8K, seguimiento de sujetos por IA y 45 min de vuelo.", badge: "TOP", class: "" },
+    { id: 10, title: "Lumina Pro Camera", price: 1499.99, img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80", cat: "tech", desc: "Cámara mirrorless full-frame ideal para creadores de contenido profesionales.", badge: "", class: "" },
+    { id: 11, title: "Lumina Smart Display", price: 249.99, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80", cat: "tech", desc: "Centro de control inteligente para tu hogar con pantalla OLED de 10 pulgadas.", badge: "", class: "" },
+    { id: 12, title: "Lumina Core Laptop", price: 1899.99, img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80", cat: "tech", desc: "Portátil ultrafino de aluminio con procesador neural M4 y batería de 22 horas.", badge: "PRO", class: "" },
+    { id: 13, title: "Lumina Fit Band", price: 59.99, img: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b0?auto=format&fit=crop&w=800&q=80", cat: "wearables", desc: "Tu compañero de actividad diaria, ultraligero y con medición de oxígeno en sangre.", badge: "", class: "" },
+    { id: 14, title: "Lumina Boombox", price: 219.99, img: "https://images.unsplash.com/photo-1608223652643-b922d99d141e?auto=format&fit=crop&w=800&q=80", cat: "audio", desc: "Altavoz portátil resistente al agua IP67 con bajos contundentes y show de luces.", badge: "OFERTA", class: "" },
+    { id: 15, title: "Lumina Gamepad", price: 79.99, img: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?auto=format&fit=crop&w=800&q=80", cat: "gaming", desc: "Mando inalámbrico multiplataforma con gatillos de efecto Hall magnético.", badge: "", class: "" },
+    { id: 16, title: "Lumina Studio Light", price: 129.99, img: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=800&q=80", cat: "tech", desc: "Panel LED bicolor inteligente para streaming y fotografía con control por app.", badge: "NEW", class: "" }
 ];
 
 // 7. Render Catalog

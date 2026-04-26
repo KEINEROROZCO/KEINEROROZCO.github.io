@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Tech | Premium E-Commerce</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Loader -->
+    <div id="loader" class="loader-container">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fa-solid fa-bolt" style="color: var(--accent); margin-right: 10px;"></i>
+                Nexus<span class="text-gradient">Tech</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <div class="loader-text">Inicializando experiencia 3D...</div>
+        </div>
+    </div>
+
+    <!-- Ambient Background Parallax -->
+    <div class="ambient-bg" id="parallax-bg">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+        <!-- Grid overlay -->
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-bolt"></i> Nexus<span class="text-gradient">Tech</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#caracteristicas">Premium</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="icon-btn search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn cart-btn" id="cart-toggle">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+                <a href="../index.html" class="btn-outline pulse-btn">Volver al Portafolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito <span class="text-gradient">Premium</span></h3>
+            <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected via JS -->
+            <div class="empty-cart-msg">Tu carrito está vacío. Descubre el futuro.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price" class="text-gradient">$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn">
+                Proceder al pago seguro <i class="fa-solid fa-shield-halved" style="margin-left: 8px;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content reveal-left">
+            <div class="badge-wrapper">
+                <span class="badge anim-pulse">Lanzamiento Exclusivo 2026</span>
+            </div>
+            <h1 class="hero-title">El sonido del <br><span class="text-gradient">futuro</span> ya está aquí.</h1>
+            <p class="hero-desc">Descubre los nuevos auriculares inalámbricos Nexus Pro con cancelación de ruido activa inteligente impulsada por IA y audio espacial holográfico.</p>
+            <div class="hero-btns">
+                <button class="btn-primary glow-btn" onclick="addToCart(1, 'Nexus Pro Headphones', 299.99, 'img/headphones.png')">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir - $299.99
+                </button>
+                <a href="#catalogo" class="btn-secondary play-btn">
+                    <i class="fa-solid fa-play"></i> Ver Video
+                </a>
+            </div>
+            
+            <div class="hero-features">
+                <div class="feature fade-in" style="--delay: 0.1s">
+                    <div class="feature-icon-small"><i class="fa-solid fa-battery-full"></i></div>
+                    <span>40h Batería</span>
+                </div>
+                <div class="feature fade-in" style="--delay: 0.2s">
+                    <div class="feature-icon-small"><i class="fa-solid fa-brain"></i></div>
+                    <span>IA Integrada</span>
+                </div>
+                <div class="feature fade-in" style="--delay: 0.3s">
+                    <div class="feature-icon-small"><i class="fa-solid fa-wave-square"></i></div>
+                    <span>Hi-Res Audio</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual reveal-right">
+            <div class="product-showcase">
+                <div class="product-ring ring-1"></div>
+                <div class="product-ring ring-2"></div>
+                <div class="product-ring ring-3"></div>
+                
+                <!-- Advanced 3D floating image -->
+                <div class="image-3d-wrapper" id="hero-3d">
+                    <img src="img/headphones.png" alt="Nexus Pro Headphones" class="hero-img floating-complex">
+                </div>
+                <div class="product-shadow"></div>
+            </div>
+            
+            <!-- Floating UI Elements -->
+            <div class="floating-card stat-card glass-panel" style="top: 15%; right: -5%;">
+                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                <div>
+                    <h4>4.9/5</h4>
+                    <p>+2.5k Reviews</p>
+                </div>
+            </div>
+            <div class="floating-card stat-card glass-panel" style="bottom: 20%; left: -10%;">
+                <div class="stat-icon" style="background: rgba(45, 212, 191, 0.2); color: #2dd4bf;"><i class="fa-solid fa-truck-fast"></i></div>
+                <div>
+                    <h4>Envío Ultra</h4>
+                    <p>Entregas en 2h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>🚀 TECNOLOGÍA DE PUNTA</span>
+            <span class="dot">•</span>
+            <span>💎 DISEÑO PREMIUM</span>
+            <span class="dot">•</span>
+            <span>⚡ RENDIMIENTO EXTREMO</span>
+            <span class="dot">•</span>
+            <span>🛡️ GARANTÍA DE POR VIDA</span>
+            <span class="dot">•</span>
+            <span>🚀 TECNOLOGÍA DE PUNTA</span>
+            <span class="dot">•</span>
+            <span>💎 DISEÑO PREMIUM</span>
+            <span class="dot">•</span>
+            <span>⚡ RENDIMIENTO EXTREMO</span>
+            <span class="dot">•</span>
+            <span>🛡️ GARANTÍA DE POR VIDA</span>
+        </div>
+    </div>
+
+    <!-- Product Catalog -->
+    <section id="catalogo" class="catalog-section">
+        <div class="section-header reveal-up">
+            <h2>Nuestra <span class="text-gradient">Colección</span></h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="audio">Audio</button>
+                <button class="filter-btn" data-filter="wearables">Wearables</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card 3d-tilt reveal-up" data-category="audio" style="--delay: 0.1s">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper">
+                    <img src="img/headphones.png" alt="Nexus Pro" class="product-img">
+                    <div class="product-actions">
+                        <button class="icon-btn" onclick="quickView(1)"><i class="fa-solid fa-eye"></i></button>
+                        <button class="icon-btn" onclick="addToCart(1, 'Nexus Pro Headphones', 299.99, 'img/headphones.png')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Audio Premium</span>
+                    <h3 class="product-title">Nexus Pro Headphones</h3>
+                    <div class="product-price-row">
+                        <span class="product-price">$299.99</span>
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card 3d-tilt reveal-up" data-category="wearables" style="--delay: 0.2s">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper">
+                    <img src="img/headphones.png" alt="Nexus Watch" class="product-img hue-shift-1">
+                    <div class="product-badge">Top Ventas</div>
+                    <div class="product-actions">
+                        <button class="icon-btn" onclick="quickView(2)"><i class="fa-solid fa-eye"></i></button>
+                        <button class="icon-btn" onclick="addToCart(2, 'Nexus Watch Ultra', 199.99, 'img/headphones.png')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Wearables</span>
+                    <h3 class="product-title">Nexus Watch Ultra</h3>
+                    <div class="product-price-row">
+                        <span class="product-price">$199.99</span>
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card 3d-tilt reveal-up" data-category="audio" style="--delay: 0.3s">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper">
+                    <img src="img/headphones.png" alt="Nexus Earbuds" class="product-img hue-shift-2">
+                    <div class="product-actions">
+                        <button class="icon-btn" onclick="quickView(3)"><i class="fa-solid fa-eye"></i></button>
+                        <button class="icon-btn" onclick="addToCart(3, 'Nexus Earbuds Lite', 89.99, 'img/headphones.png')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Audio Portátil</span>
+                    <h3 class="product-title">Nexus Earbuds Lite</h3>
+                    <div class="product-price-row">
+                        <span class="product-price">$89.99</span>
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.6</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card 3d-tilt reveal-up" data-category="gaming" style="--delay: 0.4s">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper">
+                    <img src="img/headphones.png" alt="Nexus Keyboard" class="product-img hue-shift-3">
+                    <div class="product-badge sale">-20%</div>
+                    <div class="product-actions">
+                        <button class="icon-btn" onclick="quickView(4)"><i class="fa-solid fa-eye"></i></button>
+                        <button class="icon-btn" onclick="addToCart(4, 'Nexus Mech Keyboard', 149.99, 'img/headphones.png')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-cat">Gaming Setup</span>
+                    <h3 class="product-title">Nexus Mech Keyboard</h3>
+                    <div class="product-price-row">
+                        <span class="product-price">$149.99 <span class="old-price">$189.99</span></span>
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Features Banner -->
+    <section id="caracteristicas" class="features-banner">
+        <div class="feature-box reveal-up" style="--delay: 0.1s">
+            <div class="feature-icon glow-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4>Carga Ultra Rápida</h4>
+            <p>100% en solo 15 minutos</p>
+        </div>
+        <div class="feature-box reveal-up" style="--delay: 0.2s">
+            <div class="feature-icon glow-icon"><i class="fa-solid fa-fingerprint"></i></div>
+            <h4>Seguridad Biométrica</h4>
+            <p>Protección militar avanzada</p>
+        </div>
+        <div class="feature-box reveal-up" style="--delay: 0.3s">
+            <div class="feature-icon glow-icon"><i class="fa-solid fa-globe"></i></div>
+            <h4>Conexión Global</h4>
+            <p>5G y Satelital Integrado</p>
+        </div>
+        <div class="feature-box reveal-up" style="--delay: 0.4s">
+            <div class="feature-icon glow-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h4>Eco-Friendly</h4>
+            <p>Materiales 100% reciclados</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="reveal-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-bolt"></i> Nexus<span class="text-gradient">Tech</span>
+                </a>
+                <p>La revolución tecnológica al alcance de tus manos. Frontend Demo desarrollada con los más altos estándares de UI/UX.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Descubrir</h4>
+                <a href="#">Catálogo 2026</a>
+                <a href="#">Ediciones Limitadas</a>
+                <a href="#">Blog de Tecnología</a>
+            </div>
+            <div class="footer-links">
+                <h4>Ayuda</h4>
+                <a href="#">Soporte Técnico</a>
+                <a href="#">Rastrear Pedido</a>
+                <a href="#">Garantía Premium</a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Acceso Anticipado</h4>
+                <p>Únete para lanzamientos secretos.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Suscripción exitosa!');">
+                    <input type="email" placeholder="Tu email VIP" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nexus Tech E-Commerce Demo. Diseñado y Desarrollado por Keyner Orozco.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

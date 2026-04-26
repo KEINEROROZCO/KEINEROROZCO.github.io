@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="shortcut icon" href="../img/project-ecommerce.png" type="image/png">
+    <!-- Advanced 3D WebGL Technology -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -85,8 +87,8 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="image-wrapper" id="hero-img-wrapper">
-                <img src="img/headphones.png" alt="Lumina Air Max" class="hero-img floating hue-shift-2" id="hero-img">
+            <div class="image-wrapper" id="hero-img-wrapper" style="height: 500px; width: 100%;">
+                <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"></spline-viewer>
             </div>
         </div>
     </section>
@@ -112,13 +114,15 @@
         </div>
         
         <div class="bento-grid">
-            <div class="bento-item box-large reveal-up" style="background-color: #f8fafc;">
+            <div class="bento-item box-large reveal-up" style="background-color: #f8fafc; overflow: visible;">
                 <div class="bento-content">
                     <span class="bento-tag">Tecnología</span>
-                    <h3>Chip de Audio Cuántico</h3>
-                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una cancelación de ruido perfecta.</p>
+                    <h3>Procesador Cuántico</h3>
+                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una interacción perfecta.</p>
                 </div>
-                <img src="img/headphones.png" alt="Chip" class="bento-img hue-shift-3" style="filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1)) hue-rotate(270deg);">
+                <div style="position: absolute; bottom: -50px; right: -50px; width: 400px; height: 350px;">
+                    <spline-viewer url="https://prod.spline.design/Qj2M6M2d8XU0c7q9/scene.splinecode"></spline-viewer>
+                </div>
             </div>
             
             <div class="bento-item box-medium reveal-up" style="background-color: #f1f5f9; --delay: 0.1s;">
@@ -152,7 +156,7 @@
     <section class="showcase-section">
         <div class="showcase-container">
             <div class="showcase-sticky">
-                <img src="img/headphones.png" alt="Showcase" class="showcase-img hue-shift-1" id="showcase-img">
+                <spline-viewer url="https://prod.spline.design/kZxgEnkM-N5T2qO3/scene.splinecode"></spline-viewer>
             </div>
             <div class="showcase-content">
                 <div class="showcase-block reveal-left">

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Next-Gen E-Commerce</title>
+    <meta name="description" content="Lumina - La tienda de e-commerce de próxima generación. Audio espacial, wearables y tecnología de vanguardia.">
+    <meta name="keywords" content="e-commerce, lumina, tech, premium, gadgets, audio, wearables">
+    <meta property="og:title" content="Lumina | Next-Gen E-Commerce">
+    <meta property="og:description" content="Experimenta la nueva generación de tecnología con Lumina.">
+    <meta property="og:image" content="../img/project-ecommerce.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="shortcut icon" href="../img/project-ecommerce.png" type="image/png">
-    <!-- Advanced 3D WebGL Technology -->
+    
+    <!-- Scripts & Frameworks -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@faker-js/faker@8.4.1/dist/faker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,7 +42,10 @@
             </nav>
             
             <div class="nav-actions">
-                <button class="icon-btn magnetic-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar productos...">
+                </div>
+                <button class="icon-btn magnetic-btn" id="search-toggle"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <button class="icon-btn magnetic-btn cart-btn" id="cart-toggle">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-badge" id="cart-count">0</span>
@@ -61,9 +70,52 @@
                 <span>Total</span>
                 <span id="cart-total-price">$0.00</span>
             </div>
-            <button class="btn-primary checkout-btn">
+            <button class="btn-primary checkout-btn" id="checkout-main-btn">
                 Proceder al pago
             </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-content checkout-content">
+            <button class="close-modal" id="close-checkout"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-grid">
+                <div class="checkout-form-col">
+                    <h2>Finalizar Pedido</h2>
+                    <form id="checkout-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Nombre Completo</label>
+                                <input type="text" id="cust-name" required placeholder="Ej: John Doe">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" id="cust-email" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Dirección de Envío</label>
+                                <input type="text" id="cust-address" required placeholder="Calle, Ciudad, Código Postal">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%; margin-top: 1.5rem;">
+                            Confirmar Compra
+                        </button>
+                    </form>
+                </div>
+                <div class="checkout-summary-col">
+                    <h3>Resumen</h3>
+                    <div id="checkout-summary-list"></div>
+                    <div class="summary-total">
+                        <span>Total a pagar</span>
+                        <span id="summary-total-price">$0.00</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -278,7 +330,7 @@
     <div id="toast-container" class="toast-container"></div>
 
     <!-- Scripts -->
-    <!-- Incluyendo GSAP para animaciones avanzadas (opcional pero lo simularemos con JS nativo robusto) -->
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

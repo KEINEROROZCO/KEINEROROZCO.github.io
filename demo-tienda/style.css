@@ -268,6 +268,19 @@ body {
 .hue-shift-2 { filter: hue-rotate(180deg); }
 .hue-shift-3 { filter: hue-rotate(270deg); }
 .hue-shift-4 { filter: hue-rotate(320deg); }
+.hue-shift-5 { filter: hue-rotate(100deg); }
+.hue-shift-6 { filter: hue-rotate(30deg) saturate(200%); }
+.hue-shift-7 { filter: grayscale(100%); }
+.hue-shift-8 { filter: sepia(100%) hue-rotate(30deg) saturate(200%); }
+.hue-shift-9 { filter: sepia(100%) hue-rotate(300deg) saturate(150%); }
+.hue-shift-10 { filter: hue-rotate(140deg); }
+.hue-shift-11 { filter: grayscale(100%) brightness(0.4); }
+.scale-down { transform: scale(0.6); }
+
+/* Blending for images */
+.prod-img, .hero-img, .showcase-img, .bento-img, .modal-img-col img {
+    mix-blend-mode: multiply;
+}
 
 /* Sticky Showcase Section */
 .showcase-section { background: var(--text-primary); color: white; padding: 0; }

@@ -3,76 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Premium Tech Store</title>
+    <title>Lumina | Next-Gen E-Commerce</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Usando Inter para un look más "Apple/Stripe" técnico y limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Light Theme Loader -->
-    <div id="loader" class="loader-container">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <i class="fa-solid fa-shapes" style="color: var(--primary); margin-right: 10px;"></i>
-                Lumina<span class="text-gradient">Store</span>
-            </div>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
-            <div class="loader-text">Preparando una experiencia vibrante...</div>
-        </div>
-    </div>
-
-    <div class="ambient-bg" id="parallax-bg">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="glow glow-3"></div>
+    <!-- Minimalist Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">LUMINA</div>
     </div>
 
     <!-- Navigation -->
     <header class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-shapes" style="color: var(--primary);"></i> Lumina
-            </a>
+            <a href="#" class="logo">Lumina.</a>
             
             <nav class="nav-links">
-                <a href="#inicio" class="active">Inicio</a>
-                <a href="#categorias">Categorías</a>
-                <a href="#catalogo">Catálogo</a>
-                <a href="#testimonios">Comunidad</a>
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#experiencia" class="nav-link">Experiencia</a>
+                <a href="#coleccion" class="nav-link">Colección</a>
+                <a href="#filosofia" class="nav-link">Filosofía</a>
             </nav>
             
             <div class="nav-actions">
-                <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="icon-btn cart-btn" id="cart-toggle">
+                <button class="icon-btn magnetic-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn magnetic-btn cart-btn" id="cart-toggle">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-badge" id="cart-count">0</span>
                 </button>
-                <a href="../index.html" class="btn-primary">Volver al Portafolio</a>
+                <a href="../index.html" class="btn-primary magnetic-btn">Portafolio</a>
             </div>
         </div>
     </header>
 
-    <!-- Shopping Cart -->
+    <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3>Tu Bolsa de <span class="text-gradient">Compras</span></h3>
+            <h3>Tu Carrito</h3>
             <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
-            <div class="empty-cart-msg">Tu bolsa está vacía. ¡Llénala de color!</div>
+            <div class="empty-cart-msg">Tu carrito está vacío.</div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <span>Subtotal:</span>
-                <span id="cart-total-price" class="text-gradient">$0.00</span>
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
             </div>
             <button class="btn-primary checkout-btn">
-                Completar Pedido <i class="fa-solid fa-arrow-right"></i>
+                Proceder al pago
             </button>
         </div>
     </div>
@@ -85,208 +72,208 @@
         </div>
     </div>
 
-    <!-- Light Hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-content reveal-left">
-            <span class="badge">NUEVA COLECCIÓN</span>
-            <h1 class="hero-title">Estilo, Color y <br><span class="text-gradient">Tecnología.</span></h1>
-            <p class="hero-desc">Redefinimos la estética de tus gadgets. Descubre nuestra nueva línea de accesorios inteligentes con colores vibrantes y diseño minimalista.</p>
-            <div class="hero-btns">
-                <button class="btn-primary" onclick="addToCart(1, 'Lumina Air Max', 349.99, 'img/headphones.png')">
-                    Comprar Ahora - $349.99
-                </button>
-                <a href="#catalogo" class="btn-secondary">
-                    Explorar Todo
-                </a>
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal-text">Sonido que<br>puedes ver.</h1>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
+            <div class="hero-actions reveal-up" style="--delay: 0.4s">
+                <button class="btn-primary magnetic-btn" onclick="addToCart(1, 'Lumina Air Max', 349.99, 'img/headphones.png')">Comprar ahora</button>
+                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir más</a>
             </div>
-            
-            <div class="hero-features">
-                <div class="feature reveal-up" style="--delay: 0.2s">
-                    <div class="feature-icon-small"><i class="fa-solid fa-palette"></i></div>
-                    <span>Diseño Único</span>
-                </div>
-                <div class="feature reveal-up" style="--delay: 0.3s">
-                    <div class="feature-icon-small"><i class="fa-solid fa-feather"></i></div>
-                    <span>Ultra Ligeros</span>
-                </div>
-                <div class="feature reveal-up" style="--delay: 0.4s">
-                    <div class="feature-icon-small"><i class="fa-solid fa-music"></i></div>
-                    <span>Audio Espacial</span>
-                </div>
+        </div>
+        <div class="hero-visual">
+            <div class="image-wrapper" id="hero-img-wrapper">
+                <img src="img/headphones.png" alt="Lumina Air Max" class="hero-img floating" id="hero-img">
             </div>
+        </div>
+    </section>
+
+    <!-- Infinite Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>NUEVA COLECCIÓN 2026</span> • 
+            <span>AUDIO ESPACIAL 3D</span> • 
+            <span>DISEÑO MINIMALISTA</span> • 
+            <span>CANCELACIÓN DE RUIDO ACTIVA</span> • 
+            <span>NUEVA COLECCIÓN 2026</span> • 
+            <span>AUDIO ESPACIAL 3D</span> • 
+            <span>DISEÑO MINIMALISTA</span> • 
+            <span>CANCELACIÓN DE RUIDO ACTIVA</span> • 
+        </div>
+    </div>
+
+    <!-- Bento Box Features -->
+    <section id="experiencia" class="bento-section">
+        <div class="section-heading text-center reveal-up">
+            <h2 class="massive-text">Redefiniendo <br>lo posible.</h2>
         </div>
         
-        <div class="hero-visual reveal-right">
-            <div class="hero-blob"></div>
-            <div class="image-3d-wrapper" id="hero-3d">
-                <img src="img/headphones.png" alt="Lumina Air Max" class="hero-img floating-complex" style="filter: drop-shadow(0 40px 40px rgba(79,70,229,0.2));">
+        <div class="bento-grid">
+            <div class="bento-item box-large reveal-up" style="background-color: #f8fafc;">
+                <div class="bento-content">
+                    <span class="bento-tag">Tecnología</span>
+                    <h3>Chip de Audio Cuántico</h3>
+                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una cancelación de ruido perfecta.</p>
+                </div>
+                <img src="img/headphones.png" alt="Chip" class="bento-img hue-shift-1">
             </div>
             
-            <div class="floating-card glass-panel" style="top: 10%; right: -10%;">
-                <div class="stat-icon"><i class="fa-solid fa-fire"></i></div>
-                <div>
-                    <h4 style="color: var(--text-main);">#1 en Ventas</h4>
-                    <p style="color: var(--text-muted); font-size: 0.85rem;">Esta semana</p>
+            <div class="bento-item box-medium reveal-up" style="background-color: #f1f5f9; --delay: 0.1s;">
+                <div class="bento-content">
+                    <span class="bento-tag">Batería</span>
+                    <h3>40 horas non-stop.</h3>
+                    <p>Autonomía líder en la industria con carga ultrarrápida.</p>
+                </div>
+                <div class="bento-icon"><i class="fa-solid fa-battery-full"></i></div>
+            </div>
+            
+            <div class="bento-item box-medium reveal-up" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; --delay: 0.2s;">
+                <div class="bento-content">
+                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Diseño</span>
+                    <h3 style="color: white;">Titanio Aeroespacial</h3>
+                    <p style="color: #cbd5e1;">Más resistente, 30% más ligero.</p>
+                </div>
+            </div>
+            
+            <div class="bento-item box-wide reveal-up" style="background-color: #e0f2fe; --delay: 0.3s;">
+                <div class="bento-content">
+                    <span class="bento-tag" style="color: #0284c7; border-color: rgba(2,132,199,0.2);">Ecosistema</span>
+                    <h3>Conexión instantánea.</h3>
+                    <p>Acércalo a cualquiera de tus dispositivos y listo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categorías -->
-    <section id="categorias" class="categories-section">
-        <div class="section-header reveal-up">
-            <h2>Explora por <span class="text-gradient">Categorías</span></h2>
-        </div>
-        <div class="categories-grid">
-            <a href="#catalogo" class="cat-card reveal-up" style="--delay: 0.1s" onclick="filterCategory('audio')">
-                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Audio" class="cat-img">
-                <div class="cat-content">
-                    <h3 class="cat-title">Audio Premium</h3>
-                    <span class="cat-link">Ver productos <i class="fa-solid fa-arrow-right"></i></span>
+    <!-- Sticky Showcase Section -->
+    <section class="showcase-section">
+        <div class="showcase-container">
+            <div class="showcase-sticky">
+                <img src="img/headphones.png" alt="Showcase" class="showcase-img hue-shift-2" id="showcase-img">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-block reveal-left">
+                    <h3 class="gradient-text-alt">01 / Inmersión</h3>
+                    <h2>Siente cada instrumento.</h2>
+                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos nítidos y graves que retumban en el pecho sin distorsión.</p>
                 </div>
-            </a>
-            <a href="#catalogo" class="cat-card reveal-up" style="--delay: 0.2s" onclick="filterCategory('wearables')">
-                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wearables" class="cat-img">
-                <div class="cat-content">
-                    <h3 class="cat-title">Smart Watches</h3>
-                    <span class="cat-link">Ver productos <i class="fa-solid fa-arrow-right"></i></span>
+                <div class="showcase-block reveal-left">
+                    <h3 class="gradient-text-alt">02 / Confort</h3>
+                    <h2>Como no llevar nada.</h2>
+                    <p>Almohadillas de espuma viscoelástica envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
                 </div>
-            </a>
-            <a href="#catalogo" class="cat-card reveal-up" style="--delay: 0.3s" onclick="filterCategory('gaming')">
-                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gaming" class="cat-img">
-                <div class="cat-content">
-                    <h3 class="cat-title">Gaming Setups</h3>
-                    <span class="cat-link">Ver productos <i class="fa-solid fa-arrow-right"></i></span>
+                <div class="showcase-block reveal-left">
+                    <h3 class="gradient-text-alt">03 / Control</h3>
+                    <h2>Todo en un toque.</h2>
+                    <p>Controles táctiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el teléfono.</p>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
 
-    <!-- Product Catalog (Expanded) -->
-    <section id="catalogo" class="catalog-section">
-        <div class="section-header reveal-up">
-            <h2>Catálogo <span class="text-gradient">Completo</span></h2>
+    <!-- Product Collection Grid -->
+    <section id="coleccion" class="collection-section">
+        <div class="section-heading text-center reveal-up">
+            <h2 class="massive-text">La Colección.</h2>
             <div class="filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn active" data-filter="all">Ver Todo</button>
                 <button class="filter-btn" data-filter="audio">Audio</button>
-                <button class="filter-btn" data-filter="wearables">Relojes</button>
-                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="wearables">Wearables</button>
+                <button class="filter-btn" data-filter="gaming">Gaming Setup</button>
             </div>
         </div>
         
-        <div class="products-grid" id="products-grid">
-            <!-- Injected via JS to make code cleaner and demonstrate more items -->
+        <div class="catalog-grid" id="catalog-grid">
+            <!-- JS Injected Products -->
         </div>
     </section>
 
-    <!-- Testimonios -->
-    <section id="testimonios" class="testimonials">
-        <h2 class="reveal-up">Amados por nuestra <span style="color: #fbcfe8;">comunidad</span></h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card reveal-up" style="--delay: 0.1s">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="quote">"El diseño es simplemente increíble. Los audífonos no solo suenan perfecto, sino que se ven como una obra de arte. Totalmente recomendados."</p>
-                <div class="author">
-                    <div class="author-avatar">CM</div>
-                    <div class="author-info">
-                        <h4>Camila M.</h4>
-                        <p>Diseñadora Gráfica</p>
-                    </div>
+    <!-- Testimonials (Marquee Style) -->
+    <section id="filosofia" class="testimonials-modern">
+        <div class="section-heading text-center reveal-up">
+            <h2>Voces de nuestros usuarios</h2>
+        </div>
+        <div class="testim-container">
+            <div class="testim-track">
+                <div class="testim-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"El diseño industrial es de otro nivel. Parecen una pieza de arte de museo que además suena increíble."</p>
+                    <strong>- Revista TechTrend</strong>
                 </div>
-            </div>
-            <div class="testimonial-card reveal-up" style="--delay: 0.2s">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="quote">"Compré el reloj inteligente y la batería dura días. La interfaz es súper rápida y el color azul vibrante llama la atención de todos."</p>
-                <div class="author">
-                    <div class="author-avatar">JR</div>
-                    <div class="author-info">
-                        <h4>Javier R.</h4>
-                        <p>Atleta Profesional</p>
-                    </div>
+                <div class="testim-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Simplemente perfectos. El peso es ideal, la batería no se acaba nunca y el sonido es puro."</p>
+                    <strong>- Marco P.</strong>
                 </div>
-            </div>
-            <div class="testimonial-card reveal-up" style="--delay: 0.3s">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                <p class="quote">"El envío fue rapidísimo y el empaque es de otra galaxia. Se nota el amor y el detalle en cada parte de esta tienda."</p>
-                <div class="author">
-                    <div class="author-avatar">AL</div>
-                    <div class="author-info">
-                        <h4>Ana L.</h4>
-                        <p>Creadora de Contenido</p>
-                    </div>
+                <div class="testim-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinación de estética y funcionalidad."</p>
+                    <strong>- AudioPro Blog</strong>
+                </div>
+                <div class="testim-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"La interacción con el ecosistema es mágica. Fue sacarlos de la caja y ya estaban sonando."</p>
+                    <strong>- Sarah T.</strong>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Banner -->
-    <section class="features-banner">
-        <div class="feature-box reveal-up" style="--delay: 0.1s">
-            <div class="feature-icon"><i class="fa-solid fa-box-open"></i></div>
-            <h4>Envío Gratis</h4>
-            <p>A todo el país en pedidos > $50</p>
-        </div>
-        <div class="feature-box reveal-up" style="--delay: 0.2s">
-            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
-            <h4>Devoluciones</h4>
-            <p>30 días para cambiar de opinión</p>
-        </div>
-        <div class="feature-box reveal-up" style="--delay: 0.3s">
-            <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
-            <h4>Pagos Seguros</h4>
-            <p>Encriptación SSL 256-bit</p>
-        </div>
-        <div class="feature-box reveal-up" style="--delay: 0.4s">
-            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
-            <h4>Soporte 24/7</h4>
-            <p>Estamos aquí para ayudarte</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="reveal-up">
-        <div class="footer-content">
+    <!-- Modern Footer -->
+    <footer class="footer-modern">
+        <div class="footer-grid">
             <div class="footer-brand">
-                <a href="#" class="logo">
-                    <i class="fa-solid fa-shapes" style="color: var(--primary);"></i> Lumina
-                </a>
-                <p>Una tienda online brillante, vibrante y llena de vida. Demo desarrollada con diseño minimalista moderno para mostrar capacidades de Frontend avanzadas.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <h2 class="logo-large">Lumina.</h2>
+                <p>Diseñando el futuro de la tecnología personal. Minimalismo, potencia y elegancia en cada detalle.</p>
+                <div class="social-icons">
+                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="footer-links">
-                <h4>Comprar</h4>
-                <a href="#">Audio</a>
-                <a href="#">Wearables</a>
+            
+            <div class="footer-links-group">
+                <h4>Explorar</h4>
+                <a href="#">Audio Premium</a>
+                <a href="#">Smartwatches</a>
+                <a href="#">Estaciones Gaming</a>
                 <a href="#">Accesorios</a>
-                <a href="#">Tarjetas de Regalo</a>
             </div>
-            <div class="footer-links">
-                <h4>Nosotros</h4>
-                <a href="#">Nuestra Historia</a>
-                <a href="#">Sostenibilidad</a>
-                <a href="#">Trabaja con nosotros</a>
+            
+            <div class="footer-links-group">
+                <h4>Soporte</h4>
+                <a href="#">Centro de Ayuda</a>
+                <a href="#">Garantía Lumina Care</a>
+                <a href="#">Estado de Pedido</a>
+                <a href="#">Devoluciones</a>
             </div>
+            
             <div class="footer-newsletter">
-                <h4>Boletín Exclusivo</h4>
-                <p>Obtén 10% de descuento en tu primera compra.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Gracias por suscribirte!');">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="btn-primary" style="padding: 0.8rem 1.2rem;"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+                <h4>Mantente Informado</h4>
+                <p>Recibe noticias sobre nuevos lanzamientos antes que nadie.</p>
+                <div class="input-group">
+                    <input type="email" placeholder="Ingresa tu email">
+                    <button class="btn-primary">Suscribir</button>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom" style="text-align: center; color: #64748b; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Lumina Store Demo. Creado por Keyner Orozco.</p>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumina E-Commerce Demo. Desarrollado por Keyner Orozco.</p>
+            <div class="legal-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
         </div>
     </footer>
 
     <!-- Toast Container -->
     <div id="toast-container" class="toast-container"></div>
 
+    <!-- Scripts -->
+    <!-- Incluyendo GSAP para animaciones avanzadas (opcional pero lo simularemos con JS nativo robusto) -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Barrio "Don José"</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,9 +21,9 @@
             <div class="nav-links">
                 <a href="#inicio" class="active">Inicio</a>
                 <a href="#productos">Productos</a>
-                <a href="../index.html" class="portfolio-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+                <a href="../index.html" class="portfolio-link magnetic-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
             </div>
-            <div class="cart-icon" id="cart-toggle">
+            <div class="cart-icon magnetic-btn" id="cart-toggle">
                 <i class="fa-solid fa-shopping-basket"></i>
                 <span class="cart-badge" id="cart-count">0</span>
             </div>
@@ -32,10 +32,11 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Todo lo que necesitas,<br>a un clic de tu casa.</h1>
-            <p>Productos frescos, bebidas frías y tus snacks favoritos con entrega inmediata en el barrio.</p>
-            <a href="#productos" class="btn-primary">Ver Productos</a>
+            <h1 class="hero-title">Todo lo que necesitas,<br>a un clic de tu casa.</h1>
+            <p class="hero-subtitle">Productos frescos, bebidas frías y tus snacks favoritos con entrega inmediata en el barrio.</p>
+            <a href="#productos" class="btn-primary magnetic-btn hero-btn">Ver Productos</a>
         </div>
     </section>
 
@@ -43,13 +44,15 @@
     <main id="productos" class="shop-container">
         <!-- Sidebar Filters -->
         <aside class="filters">
-            <h3>Categorías</h3>
+            <h3><i class="fa-solid fa-filter"></i> Categorías</h3>
             <ul id="category-list">
                 <li class="filter-btn active" data-cat="all">Todos</li>
                 <li class="filter-btn" data-cat="Bebidas">Bebidas</li>
                 <li class="filter-btn" data-cat="Snacks">Snacks</li>
                 <li class="filter-btn" data-cat="Despensa">Despensa</li>
-                <li class="filter-btn" data-cat="Frescos">Frescos</li>
+                <li class="filter-btn" data-cat="Frescos">Frutas y Verduras</li>
+                <li class="filter-btn" data-cat="Limpieza">Limpieza</li>
+                <li class="filter-btn" data-cat="Lacteos">Lácteos</li>
             </ul>
         </aside>
 
@@ -57,7 +60,7 @@
         <section class="products">
             <div class="search-bar">
                 <i class="fa-solid fa-search"></i>
-                <input type="text" id="search-input" placeholder="Buscar productos (ej. Leche, Papas...)">
+                <input type="text" id="search-input" placeholder="Buscar productos (ej. Leche, Papas, Jabón...)">
             </div>
             
             <div class="grid" id="product-grid">
@@ -70,18 +73,42 @@
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h2>Mi Canasta</h2>
+            <h2><i class="fa-solid fa-basket-shopping"></i> Mi Canasta</h2>
             <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
             <!-- JS Injected Cart Items -->
         </div>
         <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">$0.00</span>
+            <div class="cart-summary">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Impuestos (IVA 19%):</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Envío:</span>
+                    <span id="cart-shipping">$0.00</span>
+                </div>
+                <div class="summary-line total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
             </div>
-            <button class="btn-primary full-width" id="checkout-btn">Proceder al Pago</button>
+            <button class="btn-primary full-width magnetic-btn" id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content quick-view-content">
+            <button class="close-btn modal-close" onclick="closeModal('quick-view-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="qv-body" id="qv-body">
+                <!-- JS Injected Quick View -->
+            </div>
         </div>
     </div>
 
@@ -90,7 +117,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Confirmar Pedido</h2>
-                <button class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                <button class="close-btn" onclick="closeModal('checkout-modal')"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <form id="checkout-form" class="checkout-form">
                 <div class="form-group">
@@ -98,20 +125,31 @@
                     <input type="text" required placeholder="Tu nombre">
                 </div>
                 <div class="form-group">
-                    <label>Dirección</label>
+                    <label>Dirección de Entrega</label>
                     <input type="text" required placeholder="Calle 123, Barrio...">
                 </div>
-                <button type="submit" class="btn-primary full-width">Enviar Pedido por WhatsApp</button>
+                <div class="form-group">
+                    <label>Método de Pago</label>
+                    <select class="custom-select">
+                        <option>Efectivo contra entrega</option>
+                        <option>Transferencia / Nequi / Daviplata</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width magnetic-btn">Enviar Pedido por WhatsApp</button>
             </form>
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
     <footer>
-        <p>© 2026 La Tiendita del Barrio. Proyecto de Portafolio.</p>
+        <p>© 2026 La Tiendita del Barrio. Proyecto de Portafolio Avanzado.</p>
     </footer>
 
-    <!-- GSAP for basic animations -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

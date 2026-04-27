@@ -20,14 +20,17 @@ const ProductService = {
         const products = [];
         const categories = window.CONFIG.CATEGORIES;
 
+        const brands = ['Apex', 'Nova', 'Titan', 'Zenith', 'Echo', 'Vector', 'Lumina', 'Cyber', 'Aura', 'Quantum'];
+        
         for (let i = 1; i <= window.CONFIG.PRODUCT_COUNT; i++) {
             const category = categories[Math.floor(Math.random() * categories.length)];
+            const brand = brands[Math.floor(Math.random() * brands.length)];
             const keywords = window.CONFIG.IMAGE_KEYWORDS[category];
             const randomKeyword = keywords.split(',')[Math.floor(Math.random() * 3)];
             
             products.push({
                 id: i,
-                title: `Lumina ${faker.commerce.productName()}`,
+                title: `${brand} ${faker.commerce.productName()}`,
                 price: parseFloat(faker.commerce.price({ min: 49, max: 2499 })),
                 cat: category,
                 desc: faker.commerce.productDescription(),

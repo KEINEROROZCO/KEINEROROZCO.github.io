@@ -1,4 +1,4 @@
-/**
+﻿/**
  * LUMINA STORE - Expert Engineer Edition
  * Architecture: Module-based Service Layer
  */
@@ -42,18 +42,12 @@ const ProductService = {
         // Override Unsplash with more curated logic if seeds fail to look "tech"
         products.forEach((p, idx) => {
             const techSeeds = [
-                '1503926359681-285023f0a62d', // Headphones
-                '1523275335684-37898b6baf30', // Watch
-                '1590658268037-6bf12165a8df', // Mouse
-                '1595225476474-87563907a212', // Phone
-                '1590602847861-f357a9332bbc', // Speaker
-                '1608043152269-423dbba4e7e1', // Laptop
-                '1527864550417-7fd91fc51a46', // Tablet
-                '1622979135225-d2ba269cf1ac', // VR
-                '1507582020474-9a35b7d455d9', // Camera
-                '1516035069371-29a1b244cc32', // Lens
-                '1511707171634-5f897ff02aa9', // Mobile
-                '1496181133206-80ce9b88a853'  // Desk
+                '1503926359681-285023f0a62d', '1523275335684-37898b6baf30', 
+                '1590658268037-6bf12165a8df', '1595225476474-87563907a212',
+                '1590602847861-f357a9332bbc', '1608043152269-423dbba4e7e1',
+                '1527864550417-7fd91fc51a46', '1622979135225-d2ba269cf1ac',
+                '1507582020474-9a35b7d455d9', '1516035069371-29a1b244cc32',
+                '1511707171634-5f897ff02aa9', '1496181133206-80ce9b88a853'
             ];
             p.img = `https://images.unsplash.com/photo-${techSeeds[idx % techSeeds.length]}?auto=format&fit=crop&w=800&q=80`;
         });
@@ -76,7 +70,7 @@ const CartService = {
         }
         this.save();
         UIService.renderCart();
-        UIService.showToast(`${product.title} añadido.`);
+        UIService.showToast(`${product.title} a├▒adido.`);
     },
 
     updateQty(productId, delta) {
@@ -113,10 +107,10 @@ const EmailService = {
         const payload = {
             from: `Lumina Store <${window.CONFIG.CONTACT_EMAIL}>`,
             to: [customerData.email],
-            subject: `Confirmación de Pedido #${Math.floor(Math.random() * 1000000)}`,
+            subject: `Confirmaci├│n de Pedido #${Math.floor(Math.random() * 1000000)}`,
             html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee;">
-                    <h1 style="color: #1a1a1a;">¡Gracias por tu compra, ${customerData.name}!</h1>
+                    <h1 style="color: #1a1a1a;">┬íGracias por tu compra, ${customerData.name}!</h1>
                     <p>Hemos recibido tu pedido y lo estamos procesando.</p>
                     <hr>
                     <h3>Resumen del Pedido</h3>
@@ -124,7 +118,7 @@ const EmailService = {
                         ${orderDetails.items.map(i => `<li>${i.title} (x${i.qty}) - $${(i.price * i.qty).toFixed(2)}</li>`).join('')}
                     </ul>
                     <p><strong>Total: $${orderDetails.total.toFixed(2)}</strong></p>
-                    <p>Dirección de envío: ${customerData.address}</p>
+                    <p>Direcci├│n de env├¡o: ${customerData.address}</p>
                     <hr>
                     <p style="font-size: 12px; color: #888;">Lumina Store Demo - No es una tienda real.</p>
                 </div>
@@ -136,10 +130,10 @@ const EmailService = {
 
         console.log("Resend API Simulation:", payload);
         
-        // Simulación de fetch a Resend
+        // Simulaci├│n de fetch a Resend
         return new Promise((resolve) => {
             setTimeout(() => {
-                console.log("Email enviado exitosamente vía Resend.");
+                console.log("Email enviado exitosamente v├¡a Resend.");
                 resolve({ success: true, messageId: 'resend_msg_' + Date.now() });
             }, 1500);
         });
@@ -251,7 +245,7 @@ const UIService = {
         totalElement.textContent = `$${CartService.getTotal().toFixed(2)}`;
 
         if (state.cart.length === 0) {
-            itemsContainer.innerHTML = '<div class="empty-cart-msg">Tu carrito está vacío.</div>';
+            itemsContainer.innerHTML = '<div class="empty-cart-msg">Tu carrito est├í vac├¡o.</div>';
             return;
         }
 
@@ -393,13 +387,13 @@ const CheckoutService = {
             // Llamada al servicio de Email (Resend)
             await EmailService.sendConfirmation(customerData, orderDetails);
             
-            UIService.showToast("¡Pedido confirmado! Revisa tu email.");
+            UIService.showToast("┬íPedido confirmado! Revisa tu email.");
             state.cart = [];
             CartService.save();
             UIService.renderCart();
             UIService.toggleCheckoutModal(false);
             
-            // Éxito visual
+            // ├ëxito visual
             this.showSuccessAnimation();
         } catch (error) {
             UIService.showToast("Error al procesar el pedido.", "error");
@@ -415,8 +409,8 @@ const CheckoutService = {
         successOverlay.innerHTML = `
             <div class="success-card">
                 <i class="fa-solid fa-circle-check"></i>
-                <h2>¡Compra Exitosa!</h2>
-                <p>Tu orden ha sido enviada vía Resend.</p>
+                <h2>┬íCompra Exitosa!</h2>
+                <p>Tu orden ha sido enviada v├¡a Resend.</p>
                 <button class="btn-primary" onclick="this.parentElement.parentElement.remove()">Volver a la tienda</button>
             </div>
         `;
@@ -436,21 +430,7 @@ window.addEventListener('load', () => {
     // 2. Data Generation
     ProductService.generateInitialProducts();
 
-    // 3. 3D Spline Fallback check
-    setTimeout(() => {
-        const viewers = document.querySelectorAll('spline-viewer');
-        viewers.forEach(v => {
-            const shadow = v.shadowRoot;
-            if (!shadow || shadow.childElementCount === 0) {
-                console.warn("Spline viewer failed to load. Showing fallback image.");
-                const fallback = v.parentElement.querySelector('.fallback-img');
-                if (fallback) fallback.style.display = 'block';
-                v.style.display = 'none';
-            }
-        });
-    }, 5000); // Wait 5s for Spline to load
-
-    // 4. UI Start
+    // 3. UI Start
     UIService.init();
 });
 

@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="description" content="Lumina - La tienda de e-commerce de próxima generación. Audio espacial, wearables y tecnología de vanguardia.">
+    <meta name="description" content="Lumina - La tienda de e-commerce de pr├│xima generaci├│n. Audio espacial, wearables y tecnolog├¡a de vanguardia.">
     <meta name="keywords" content="e-commerce, lumina, tech, premium, gadgets, audio, wearables">
     <meta property="og:title" content="Lumina | Next-Gen E-Commerce">
-    <meta property="og:description" content="Experimenta la nueva generación de tecnología con Lumina.">
+    <meta property="og:description" content="Experimenta la nueva generaci├│n de tecnolog├¡a con Lumina.">
     <meta property="og:image" content="../img/project-ecommerce.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Usando Inter para un look más "Apple/Stripe" técnico y limpio -->
+    <!-- Usando Inter para un look m├ís "Apple/Stripe" t├®cnico y limpio -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="shortcut icon" href="img/headphones.png" type="image/png">
+    <link rel="shortcut icon" href="../img/project-ecommerce.png" type="image/png">
     
     <!-- Scripts & Frameworks -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
@@ -37,8 +37,8 @@
             <nav class="nav-links">
                 <a href="#inicio" class="nav-link">Inicio</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
-                <a href="#coleccion" class="nav-link">Colección</a>
-                <a href="#filosofia" class="nav-link">Filosofía</a>
+                <a href="#coleccion" class="nav-link">Colecci├│n</a>
+                <a href="#filosofia" class="nav-link">Filosof├¡a</a>
             </nav>
             
             <div class="nav-actions">
@@ -63,7 +63,7 @@
             <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
-            <div class="empty-cart-msg">Tu carrito está vacío.</div>
+            <div class="empty-cart-msg">Tu carrito est├í vac├¡o.</div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
@@ -98,8 +98,8 @@
                         </div>
                         <div class="input-row">
                             <div class="input-group">
-                                <label>Dirección de Envío</label>
-                                <input type="text" id="cust-address" required placeholder="Calle, Ciudad, Código Postal">
+                                <label>Direcci├│n de Env├¡o</label>
+                                <input type="text" id="cust-address" required placeholder="Calle, Ciudad, C├│digo Postal">
                             </div>
                         </div>
                         <button type="submit" class="btn-primary" style="width:100%; margin-top: 1.5rem;">
@@ -132,17 +132,15 @@
         <div class="hero-bg-glow"></div>
         <div class="hero-content">
             <h1 class="hero-title reveal-text">Sonido que<br>puedes ver.</h1>
-            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generaci├│n de audio espacial. Dise├▒o ultraligero y fidelidad ac├║stica sin precedentes.</p>
             <div class="hero-actions reveal-up" style="--delay: 0.4s">
-                <button class="btn-primary magnetic-btn" onclick="CartService.add(1)">Comprar ahora</button>
-                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir más</a>
+                <button class="btn-primary magnetic-btn" onclick="addToCart(1, 'Lumina Air Max', 349.99, 'img/headphones.png')">Comprar ahora</button>
+                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir m├ís</a>
             </div>
         </div>
         <div class="hero-visual">
             <div class="image-wrapper" id="hero-img-wrapper" style="height: 500px; width: 100%;">
                 <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"></spline-viewer>
-                <!-- Fallback Image -->
-                <img src="img/hero-headphones.jpg" alt="Lumina Headphones" class="fallback-img" style="display: none;">
             </div>
         </div>
     </section>
@@ -150,14 +148,14 @@
     <!-- Infinite Marquee -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>NUEVA COLECCIÓN 2026</span> • 
-            <span>AUDIO ESPACIAL 3D</span> • 
-            <span>DISEÑO MINIMALISTA</span> • 
-            <span>CANCELACIÓN DE RUIDO ACTIVA</span> • 
-            <span>NUEVA COLECCIÓN 2026</span> • 
-            <span>AUDIO ESPACIAL 3D</span> • 
-            <span>DISEÑO MINIMALISTA</span> • 
-            <span>CANCELACIÓN DE RUIDO ACTIVA</span> • 
+            <span>NUEVA COLECCI├ôN 2026</span> ÔÇó 
+            <span>AUDIO ESPACIAL 3D</span> ÔÇó 
+            <span>DISE├æO MINIMALISTA</span> ÔÇó 
+            <span>CANCELACI├ôN DE RUIDO ACTIVA</span> ÔÇó 
+            <span>NUEVA COLECCI├ôN 2026</span> ÔÇó 
+            <span>AUDIO ESPACIAL 3D</span> ÔÇó 
+            <span>DISE├æO MINIMALISTA</span> ÔÇó 
+            <span>CANCELACI├ôN DE RUIDO ACTIVA</span> ÔÇó 
         </div>
     </div>
 
@@ -170,9 +168,9 @@
         <div class="bento-grid">
             <div class="bento-item box-large reveal-up" style="background-color: #f8fafc; overflow: visible;">
                 <div class="bento-content">
-                    <span class="bento-tag">Tecnología</span>
-                    <h3>Procesador Cuántico</h3>
-                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una interacción perfecta.</p>
+                    <span class="bento-tag">Tecnolog├¡a</span>
+                    <h3>Procesador Cu├íntico</h3>
+                    <p>Procesamiento de 24 n├║cleos que analiza el entorno 100,000 veces por segundo para una interacci├│n perfecta.</p>
                 </div>
                 <div style="position: absolute; bottom: -50px; right: -50px; width: 400px; height: 350px;">
                     <spline-viewer url="https://prod.spline.design/Qj2M6M2d8XU0c7q9/scene.splinecode"></spline-viewer>
@@ -181,26 +179,26 @@
             
             <div class="bento-item box-medium reveal-up" style="background-color: #f1f5f9; --delay: 0.1s;">
                 <div class="bento-content">
-                    <span class="bento-tag">Batería</span>
+                    <span class="bento-tag">Bater├¡a</span>
                     <h3>40 horas non-stop.</h3>
-                    <p>Autonomía líder en la industria con carga ultrarrápida.</p>
+                    <p>Autonom├¡a l├¡der en la industria con carga ultrarr├ípida.</p>
                 </div>
                 <div class="bento-icon"><i class="fa-solid fa-battery-full"></i></div>
             </div>
             
             <div class="bento-item box-medium reveal-up" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; --delay: 0.2s;">
                 <div class="bento-content">
-                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Diseño</span>
+                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Dise├▒o</span>
                     <h3 style="color: white;">Titanio Aeroespacial</h3>
-                    <p style="color: #cbd5e1;">Más resistente, 30% más ligero.</p>
+                    <p style="color: #cbd5e1;">M├ís resistente, 30% m├ís ligero.</p>
                 </div>
             </div>
             
             <div class="bento-item box-wide reveal-up" style="background-color: #e0f2fe; --delay: 0.3s;">
                 <div class="bento-content">
                     <span class="bento-tag" style="color: #0284c7; border-color: rgba(2,132,199,0.2);">Ecosistema</span>
-                    <h3>Conexión instantánea.</h3>
-                    <p>Acércalo a cualquiera de tus dispositivos y listo.</p>
+                    <h3>Conexi├│n instant├ínea.</h3>
+                    <p>Ac├®rcalo a cualquiera de tus dispositivos y listo.</p>
                 </div>
             </div>
         </div>
@@ -214,19 +212,19 @@
             </div>
             <div class="showcase-content">
                 <div class="showcase-block reveal-left">
-                    <h3 class="gradient-text-alt">01 / Inmersión</h3>
+                    <h3 class="gradient-text-alt">01 / Inmersi├│n</h3>
                     <h2>Siente cada instrumento.</h2>
-                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos nítidos y graves que retumban en el pecho sin distorsión.</p>
+                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos n├¡tidos y graves que retumban en el pecho sin distorsi├│n.</p>
                 </div>
                 <div class="showcase-block reveal-left">
                     <h3 class="gradient-text-alt">02 / Confort</h3>
                     <h2>Como no llevar nada.</h2>
-                    <p>Almohadillas de espuma viscoelástica envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
+                    <p>Almohadillas de espuma viscoel├ística envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
                 </div>
                 <div class="showcase-block reveal-left">
                     <h3 class="gradient-text-alt">03 / Control</h3>
                     <h2>Todo en un toque.</h2>
-                    <p>Controles táctiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el teléfono.</p>
+                    <p>Controles t├íctiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el tel├®fono.</p>
                 </div>
             </div>
         </div>
@@ -235,7 +233,7 @@
     <!-- Product Collection Grid -->
     <section id="coleccion" class="collection-section">
         <div class="section-heading text-center reveal-up">
-            <h2 class="massive-text">La Colección.</h2>
+            <h2 class="massive-text">La Colecci├│n.</h2>
             <div class="filters">
                 <button class="filter-btn active" data-filter="all">Ver Todo</button>
                 <button class="filter-btn" data-filter="audio">Audio</button>
@@ -257,23 +255,23 @@
         <div class="testim-container">
             <div class="testim-track">
                 <div class="testim-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"El diseño industrial es de otro nivel. Parecen una pieza de arte de museo que además suena increíble."</p>
+                    <div class="stars">ÔÿàÔÿàÔÿàÔÿàÔÿà</div>
+                    <p>"El dise├▒o industrial es de otro nivel. Parecen una pieza de arte de museo que adem├ís suena incre├¡ble."</p>
                     <strong>- Revista TechTrend</strong>
                 </div>
                 <div class="testim-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Simplemente perfectos. El peso es ideal, la batería no se acaba nunca y el sonido es puro."</p>
+                    <div class="stars">ÔÿàÔÿàÔÿàÔÿàÔÿà</div>
+                    <p>"Simplemente perfectos. El peso es ideal, la bater├¡a no se acaba nunca y el sonido es puro."</p>
                     <strong>- Marco P.</strong>
                 </div>
                 <div class="testim-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinación de estética y funcionalidad."</p>
+                    <div class="stars">ÔÿàÔÿàÔÿàÔÿàÔÿà</div>
+                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinaci├│n de est├®tica y funcionalidad."</p>
                     <strong>- AudioPro Blog</strong>
                 </div>
                 <div class="testim-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"La interacción con el ecosistema es mágica. Fue sacarlos de la caja y ya estaban sonando."</p>
+                    <div class="stars">ÔÿàÔÿàÔÿàÔÿàÔÿà</div>
+                    <p>"La interacci├│n con el ecosistema es m├ígica. Fue sacarlos de la caja y ya estaban sonando."</p>
                     <strong>- Sarah T.</strong>
                 </div>
             </div>
@@ -285,7 +283,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h2 class="logo-large">Lumina.</h2>
-                <p>Diseñando el futuro de la tecnología personal. Minimalismo, potencia y elegancia en cada detalle.</p>
+                <p>Dise├▒ando el futuro de la tecnolog├¡a personal. Minimalismo, potencia y elegancia en cada detalle.</p>
                 <div class="social-icons">
                     <a href="#" class="magnetic-btn"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="#" class="magnetic-btn"><i class="fa-brands fa-instagram"></i></a>
@@ -304,7 +302,7 @@
             <div class="footer-links-group">
                 <h4>Soporte</h4>
                 <a href="#">Centro de Ayuda</a>
-                <a href="#">Garantía Lumina Care</a>
+                <a href="#">Garant├¡a Lumina Care</a>
                 <a href="#">Estado de Pedido</a>
                 <a href="#">Devoluciones</a>
             </div>
@@ -323,7 +321,7 @@
             <p>&copy; 2026 Lumina E-Commerce Demo. Desarrollado por Keyner Orozco.</p>
             <div class="legal-links">
                 <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
+                <a href="#">T├®rminos</a>
             </div>
         </div>
     </footer>

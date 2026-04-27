@@ -3,57 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Barrio Online - En Desarrollo</title>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050816;
-            color: #f0f4ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            color: #00f5d4;
-            margin-bottom: 20px;
-        }
-        p {
-            color: rgba(240, 244, 255, 0.7);
-            line-height: 1.6;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            color: #050816;
-            background-color: #00f5d4;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
-        a:hover {
-            opacity: 0.8;
-        }
-    </style>
+    <title>Tienda de Barrio "Don José"</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Tienda de Barrio Online</h1>
-        <p>Este proyecto está basado en PHP y MySQL. Actualmente estás viendo una versión alojada en GitHub Pages, que solo soporta archivos estáticos (HTML/CSS/JS).</p>
-        <p>El código fuente completo está disponible en el repositorio de GitHub.</p>
-        <a href="../index.html">Volver al Portafolio</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-store"></i>
+                La Tiendita
+            </a>
+            <div class="nav-links">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="../index.html" class="portfolio-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+            </div>
+            <div class="cart-icon" id="cart-toggle">
+                <i class="fa-solid fa-shopping-basket"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Todo lo que necesitas,<br>a un clic de tu casa.</h1>
+            <p>Productos frescos, bebidas frías y tus snacks favoritos con entrega inmediata en el barrio.</p>
+            <a href="#productos" class="btn-primary">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="productos" class="shop-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <h3>Categorías</h3>
+            <ul id="category-list">
+                <li class="filter-btn active" data-cat="all">Todos</li>
+                <li class="filter-btn" data-cat="Bebidas">Bebidas</li>
+                <li class="filter-btn" data-cat="Snacks">Snacks</li>
+                <li class="filter-btn" data-cat="Despensa">Despensa</li>
+                <li class="filter-btn" data-cat="Frescos">Frescos</li>
+            </ul>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="products">
+            <div class="search-bar">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="search-input" placeholder="Buscar productos (ej. Leche, Papas...)">
+            </div>
+            
+            <div class="grid" id="product-grid">
+                <!-- JS Injected Products -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Mi Canasta</h2>
+            <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- JS Injected Cart Items -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn-primary full-width" id="checkout-btn">Proceder al Pago</button>
+        </div>
     </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmar Pedido</h2>
+                <button class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" required placeholder="Calle 123, Barrio...">
+                </div>
+                <button type="submit" class="btn-primary full-width">Enviar Pedido por WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 La Tiendita del Barrio. Proyecto de Portafolio.</p>
+    </footer>
+
+    <!-- GSAP for basic animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

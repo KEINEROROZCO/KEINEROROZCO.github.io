@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Colombiano — Restaurante Auténtico</title>
+    <meta name="description" content="Sabor Colombiano — Restaurante de cocina tradicional colombiana con menú digital interactivo y sistema de reservas online.">
+    <meta name="keywords" content="restaurante colombiano, cocina tradicional, reservas online, menú digital">
+    <meta name="author" content="Keyner Orozco">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-icon">🍽️</div>
+            <div class="loader-text">Sabor Colombiano</div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>Sabor<span class="logo-accent">Colombiano</span></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#menu" class="nav-link">Menú</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#reservas" class="nav-link">Reservar</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#reservas" class="btn-reserve">Reservar Mesa</a>
+                <a href="../index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Portafolio</a>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="#inicio" class="mobile-link">Inicio</a>
+            <a href="#menu" class="mobile-link">Menú</a>
+            <a href="#galeria" class="mobile-link">Galería</a>
+            <a href="#nosotros" class="mobile-link">Nosotros</a>
+            <a href="#reservas" class="mobile-link">Reservar</a>
+            <a href="../index.html" class="mobile-link portfolio-back"><i class="fa-solid fa-arrow-left"></i> Volver al Portafolio</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=85" alt="Restaurante Sabor Colombiano" class="hero-bg-img">
+        <div class="hero-content">
+            <span class="hero-badge">✨ Cocina Tradicional Colombiana</span>
+            <h1 class="hero-title">
+                <span class="hero-line">Donde cada</span>
+                <span class="hero-line accent">plato cuenta</span>
+                <span class="hero-line">una historia.</span>
+            </h1>
+            <p class="hero-subtitle">Sabores auténticos de Colombia preparados con amor, ingredientes frescos y la sazón que heredamos de nuestras abuelas.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-primary"><i class="fa-solid fa-utensils"></i> Ver Menú</a>
+                <a href="#reservas" class="btn-secondary"><i class="fa-solid fa-calendar-check"></i> Reservar Mesa</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span>Descubre más</span>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+        <div class="stat-item">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label">Años de tradición</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label">Platos en el menú</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="10000">0</span>
+            <span class="stat-label">Clientes felices</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">Estrellas en Google</span>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Nuestro Menú</span>
+                <h2 class="section-title">Sabores que <span class="gold-text">enamoran</span></h2>
+                <p class="section-desc">Cada plato es una celebración de la tradición colombiana</p>
+            </div>
+            
+            <!-- Menu Filters -->
+            <div class="menu-filters">
+                <button class="menu-filter active" data-filter="all">
+                    <i class="fa-solid fa-border-all"></i> Todos
+                </button>
+                <button class="menu-filter" data-filter="entradas">
+                    <i class="fa-solid fa-leaf"></i> Entradas
+                </button>
+                <button class="menu-filter" data-filter="fuertes">
+                    <i class="fa-solid fa-drumstick-bite"></i> Platos Fuertes
+                </button>
+                <button class="menu-filter" data-filter="bebidas">
+                    <i class="fa-solid fa-wine-glass"></i> Bebidas
+                </button>
+                <button class="menu-filter" data-filter="postres">
+                    <i class="fa-solid fa-ice-cream"></i> Postres
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- JS Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Banner -->
+    <div class="parallax-banner">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=85" alt="Ingredientes frescos" class="parallax-img">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h2>"La buena cocina es el fundamento de la verdadera felicidad."</h2>
+            <p>— Auguste Escoffier</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="section gallery-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Galería</span>
+                <h2 class="section-title">Momentos <span class="gold-text">deliciosos</span></h2>
+                <p class="section-desc">Un vistazo a nuestros platos, ambiente y experiencias</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-large" data-caption="Bandeja Paisa Tradicional">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" alt="Bandeja Paisa" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Bandeja Paisa</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Ambiente acogedor">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Interior del restaurante" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Nuestro Ambiente</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Arepas artesanales">
+                    <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=600&q=80" alt="Arepas colombianas" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Arepas Artesanales</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Cócteles tropicales">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cócteles" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Cócteles Tropicales</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-large" data-caption="Nuestro Chef en acción">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Chef preparando platos" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Chef en Acción</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Postres artesanales">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80" alt="Postres" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Postres Artesanales</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Mesa para eventos">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Mesa elegante" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Eventos Especiales</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Ingredientes frescos del mercado">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=600&q=80" alt="Ingredientes frescos" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Ingredientes Frescos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=700&q=80" alt="Chef principal" loading="lazy">
+                    </div>
+                    <div class="about-img-secondary">
+                        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=500&q=80" alt="Interior restaurante" loading="lazy">
+                    </div>
+                    <div class="about-badge">
+                        <span class="badge-number">15+</span>
+                        <span class="badge-text">Años de experiencia</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Nuestra Historia</span>
+                    <h2 class="section-title">Una tradición de <span class="gold-text">sabor</span></h2>
+                    <p>Desde 2011, Sabor Colombiano ha sido el rincón favorito de quienes buscan la auténtica cocina colombiana. Nuestro chef, con más de 15 años de experiencia, selecciona personalmente los ingredientes más frescos del mercado local.</p>
+                    <p>Cada plato que sale de nuestra cocina lleva el sello de la tradición familiar, combinando recetas ancestrales con técnicas culinarias modernas para crear una experiencia gastronómica inolvidable.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <div>
+                                <h4>Ingredientes Frescos</h4>
+                                <p>Del mercado a tu mesa cada día</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                            <div>
+                                <h4>Cocina Artesanal</h4>
+                                <p>Preparado con técnica y pasión</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+                            <div>
+                                <h4>Recetas Familiares</h4>
+                                <p>Tradición de 3 generaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Testimonios</span>
+                <h2 class="section-title">Lo que dicen nuestros <span class="gold-text">clientes</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"La mejor bandeja paisa que he probado fuera de Antioquia. El ambiente es increíble y el servicio excepcional. ¡Volveré sin duda!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Carlos M." class="author-avatar">
+                        <div>
+                            <strong>Carlos M.</strong>
+                            <span>Cliente frecuente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Celebramos nuestro aniversario aquí y fue perfecto. La comida exquisita, el vino espectacular y el trato del personal nos hizo sentir como en casa. 100% recomendado."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Ana R." class="author-avatar">
+                        <div>
+                            <strong>Ana R.</strong>
+                            <span>Reserva para evento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"El sistema de reservas online es súper práctico. Llegué y mi mesa ya estaba lista. Los jugos naturales son de otro nivel. ¡Los amo!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Miguel T." class="author-avatar">
+                        <div>
+                            <strong>Miguel T.</strong>
+                            <span>Reseña Google ⭐5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservas" class="section reservation-section">
+        <div class="section-container">
+            <div class="reservation-grid">
+                <div class="reservation-info">
+                    <span class="section-tag">Reservaciones</span>
+                    <h2 class="section-title">Reserva tu <span class="gold-text">mesa</span></h2>
+                    <p>Asegura tu lugar para una experiencia gastronómica inolvidable. Reserva fácilmente y disfruta de nuestro ambiente acogedor.</p>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <h4>Horario</h4>
+                                <p>Lun - Sáb: 11:00 AM - 10:00 PM</p>
+                                <p>Domingo: 11:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Cra 45 #78-12, Barrio El Prado</p>
+                                <p>Barranquilla, Colombia</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Contacto</h4>
+                                <p>+57 314 374 8137</p>
+                                <p>reservas@saborcolombiano.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-form-wrap">
+                    <form id="reservation-form" class="reservation-form">
+                        <h3>Reservar Mesa</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-name"><i class="fa-solid fa-user"></i> Nombre</label>
+                                <input type="text" id="res-name" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-phone"><i class="fa-solid fa-phone"></i> Teléfono</label>
+                                <input type="tel" id="res-phone" placeholder="+57 3XX XXX XXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-date"><i class="fa-solid fa-calendar"></i> Fecha</label>
+                                <input type="date" id="res-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-time"><i class="fa-solid fa-clock"></i> Hora</label>
+                                <select id="res-time" required>
+                                    <option value="">Seleccionar hora</option>
+                                    <option>11:00 AM</option>
+                                    <option>12:00 PM</option>
+                                    <option>1:00 PM</option>
+                                    <option>2:00 PM</option>
+                                    <option>3:00 PM</option>
+                                    <option>6:00 PM</option>
+                                    <option>7:00 PM</option>
+                                    <option>8:00 PM</option>
+                                    <option>9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-guests"><i class="fa-solid fa-users"></i> Personas</label>
+                                <select id="res-guests" required>
+                                    <option value="">¿Cuántas personas?</option>
+                                    <option>1 persona</option>
+                                    <option>2 personas</option>
+                                    <option>3-4 personas</option>
+                                    <option>5-6 personas</option>
+                                    <option>7-10 personas</option>
+                                    <option>Evento (+10)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-occasion"><i class="fa-solid fa-champagne-glasses"></i> Ocasión</label>
+                                <select id="res-occasion">
+                                    <option value="">Seleccionar (opcional)</option>
+                                    <option>Cena casual</option>
+                                    <option>Cumpleaños</option>
+                                    <option>Aniversario</option>
+                                    <option>Reunión de negocios</option>
+                                    <option>Evento especial</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-notes"><i class="fa-solid fa-comment"></i> Notas especiales</label>
+                            <textarea id="res-notes" rows="3" placeholder="Alergias, preferencias, decoración especial..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">
+                            <i class="fa-brands fa-whatsapp"></i> Confirmar Reserva por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5!2d-75.55!3d10.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzM2LjAiTiA3NcKwMzMnMDAuMCJX!5e0!3m2!1ses!2sco!4v1" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">🍽️ Sabor<span class="logo-accent">Colombiano</span></div>
+                    <p>Donde la tradición se encuentra con la pasión culinaria. Cada visita es una experiencia inolvidable.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://wa.me/573143748137"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#menu">Menú</a>
+                    <a href="#galeria">Galería</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#reservas">Reservar</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Horario</h4>
+                    <p>Lunes - Sábado</p>
+                    <p>11:00 AM - 10:00 PM</p>
+                    <p>Domingo</p>
+                    <p>11:00 AM - 4:00 PM</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <p><i class="fa-solid fa-phone"></i> +57 314 374 8137</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@saborcolombiano.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Barranquilla, Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Sabor Colombiano — Proyecto de Portafolio por <a href="../index.html">Keyner Orozco</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/573143748137?text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Sabor%20Colombiano" target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

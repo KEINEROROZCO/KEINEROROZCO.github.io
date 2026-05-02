@@ -229,8 +229,9 @@ body {
 }
 .hero-img {
     max-width: 80%; max-height: 100%; object-fit: contain;
-    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.15));
     transform-style: preserve-3d;
+    border-radius: 20px;
 }
 .floating { animation: float-gentle 8s ease-in-out infinite; }
 @keyframes float-gentle {
@@ -285,27 +286,8 @@ body {
 }
 .bento-item h3 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.1; }
 .bento-item p { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 90%; }
-.bento-img { position: absolute; bottom: -10%; right: -10%; width: 70%; object-fit: contain; }
+.bento-img { position: absolute; bottom: -10%; right: -10%; width: 70%; object-fit: contain; border-radius: 16px; }
 .bento-icon { font-size: 3rem; color: var(--text-primary); align-self: flex-end; }
-
-/* Hue Shifts for mock variations */
-.hue-shift-1 { filter: hue-rotate(45deg); }
-.hue-shift-2 { filter: hue-rotate(180deg); }
-.hue-shift-3 { filter: hue-rotate(270deg); }
-.hue-shift-4 { filter: hue-rotate(320deg); }
-.hue-shift-5 { filter: hue-rotate(100deg); }
-.hue-shift-6 { filter: hue-rotate(30deg) saturate(200%); }
-.hue-shift-7 { filter: grayscale(100%); }
-.hue-shift-8 { filter: sepia(100%) hue-rotate(30deg) saturate(200%); }
-.hue-shift-9 { filter: sepia(100%) hue-rotate(300deg) saturate(150%); }
-.hue-shift-10 { filter: hue-rotate(140deg); }
-.hue-shift-11 { filter: grayscale(100%) brightness(0.4); }
-.scale-down { transform: scale(0.6); }
-
-/* Blending for images */
-.prod-img, .hero-img, .showcase-img, .bento-img, .modal-img-col img {
-    mix-blend-mode: multiply;
-}
 
 /* Sticky Showcase Section */
 .showcase-section { background: var(--text-primary); color: white; padding: 0; }
@@ -316,7 +298,7 @@ body {
     background: radial-gradient(circle, rgba(30,41,59,1) 0%, rgba(2,6,23,1) 100%);
     overflow: hidden;
 }
-.showcase-img { width: 70%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); transition: transform 0.1s; }
+.showcase-img { width: 70%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.4)); transition: transform 0.1s; border-radius: 24px; }
 .showcase-content { flex: 1; padding: 10rem 5%; }
 .showcase-block { height: 80vh; display: flex; flex-direction: column; justify-content: center; }
 .showcase-block h3 { margin-bottom: 1rem; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -443,6 +425,42 @@ body {
 .modal-info-col h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.1; }
 .modal-price { font-size: 1.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 2rem; }
 .modal-desc { color: var(--text-secondary); line-height: 1.7; font-size: 1.1rem; margin-bottom: 3rem; }
+
+/* Hero Image Glow */
+.hero-img-glow {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(168,85,247,0.1) 40%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: glowPulse 4s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes glowPulse {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Bento Float Animation */
+.bento-float {
+    animation: bentoFloat 6s ease-in-out infinite;
+}
+@keyframes bentoFloat {
+    0%, 100% { transform: translateY(0) rotate(2deg); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
+}
+
+/* Showcase Float */
+.showcase-float {
+    animation: showcaseFloat 5s ease-in-out infinite;
+}
+@keyframes showcaseFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.02); }
+}
 
 /* Toasts */
 .toast-container { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 10001; display: flex; flex-direction: column; gap: 1rem; }

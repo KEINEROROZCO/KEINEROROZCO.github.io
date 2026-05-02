@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo & Arte — Salón de Belleza Premium</title>
+    <meta name="description" content="Estilo & Arte — Salón de belleza premium con sistema de citas online, portafolio de estilos y los mejores profesionales.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-icon">✂️</div>
+            <div class="loader-text">Estilo & Arte</div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">✂️ Estilo<span class="logo-accent">&Arte</span></a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#portafolio" class="nav-link">Portafolio</a>
+                <a href="#equipo" class="nav-link">Equipo</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#citas" class="nav-link">Agendar</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#citas" class="btn-cta">Agendar Cita</a>
+                <a href="../index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Portafolio</a>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="#inicio" class="mobile-link">Inicio</a>
+            <a href="#servicios" class="mobile-link">Servicios</a>
+            <a href="#portafolio" class="mobile-link">Portafolio</a>
+            <a href="#equipo" class="mobile-link">Equipo</a>
+            <a href="#precios" class="mobile-link">Precios</a>
+            <a href="#citas" class="mobile-link">Agendar Cita</a>
+            <a href="../index.html" class="mobile-link back"><i class="fa-solid fa-arrow-left"></i> Volver al Portafolio</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=85" alt="Salón de belleza" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">💎 Salón de Belleza Premium</span>
+            <h1 class="hero-title">
+                <span>Tu estilo,</span>
+                <span class="accent">nuestra pasión.</span>
+            </h1>
+            <p class="hero-sub">Transformamos tu imagen con las últimas tendencias y técnicas profesionales. Cada visita es una experiencia de lujo.</p>
+            <div class="hero-actions">
+                <a href="#citas" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Agendar Cita</a>
+                <a href="#servicios" class="btn-secondary"><i class="fa-solid fa-sparkles"></i> Ver Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Servicios <span class="accent-text">premium</span></h2>
+                <p class="section-desc">Ofrecemos una experiencia completa de belleza y cuidado personal</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80" alt="Corte de cabello" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3>Cortes de Cabello</h3>
+                        <p>Cortes modernos, clásicos y personalizados para mujer, hombre y niños. Asesoría de imagen incluida.</p>
+                        <span class="service-price">Desde $25.000</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Colorimetría" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h3>Color & Mechas</h3>
+                        <p>Balayage, mechas, tintes completos y corrección de color. Productos de primera calidad.</p>
+                        <span class="service-price">Desde $80.000</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Tratamientos" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+                        <h3>Tratamientos Capilares</h3>
+                        <p>Keratina, botox capilar, hidratación profunda y reconstrucción. Cabello saludable y brillante.</p>
+                        <span class="service-price">Desde $60.000</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Manicure" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+                        <h3>Manicure & Pedicure</h3>
+                        <p>Uñas semipermanentes, acrílicas, diseños artísticos y spa de manos y pies.</p>
+                        <span class="service-price">Desde $20.000</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Barba" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+                        <h3>Barbería Premium</h3>
+                        <p>Afeitado clásico con navaja, diseño de barba, cuidado facial masculino. Experiencia VIP.</p>
+                        <span class="service-price">Desde $20.000</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-img"><img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=600&q=80" alt="Maquillaje" loading="lazy"></div>
+                    <div class="service-body">
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Maquillaje Profesional</h3>
+                        <p>Maquillaje para eventos, novias, quinceañeras y sesiones fotográficas. Looks de pasarela.</p>
+                        <span class="service-price">Desde $50.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Before & After -->
+    <section id="portafolio" class="section portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestro Trabajo</span>
+                <h2 class="section-title">Portafolio de <span class="accent-text">estilos</span></h2>
+                <p class="section-desc">Algunos de nuestros mejores trabajos y transformaciones</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Estilo 1" loading="lazy">
+                    <div class="portfolio-overlay"><span>Balayage Caramelo</span></div>
+                </div>
+                <div class="portfolio-item tall reveal">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80" alt="Estilo 2" loading="lazy">
+                    <div class="portfolio-overlay"><span>Corte Bob Moderno</span></div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Estilo 3" loading="lazy">
+                    <div class="portfolio-overlay"><span>Mechas Californianas</span></div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80" alt="Estilo 4" loading="lazy">
+                    <div class="portfolio-overlay"><span>Corte Pixie</span></div>
+                </div>
+                <div class="portfolio-item tall reveal">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Estilo 5" loading="lazy">
+                    <div class="portfolio-overlay"><span>Peinado de Novia</span></div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Estilo 6" loading="lazy">
+                    <div class="portfolio-overlay"><span>Barbería Clásica</span></div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Estilo 7" loading="lazy">
+                    <div class="portfolio-overlay"><span>Nail Art</span></div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=600&q=80" alt="Estilo 8" loading="lazy">
+                    <div class="portfolio-overlay"><span>Maquillaje Glam</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="equipo" class="section team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestro Equipo</span>
+                <h2 class="section-title">Profesionales de <span class="accent-text">élite</span></h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-img"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=500&q=80" alt="Laura Pérez" loading="lazy"></div>
+                    <div class="team-info">
+                        <h3>Laura Pérez</h3>
+                        <span class="team-role">Directora Creativa</span>
+                        <p>15 años de experiencia. Especialista en color y transformaciones radicales.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Carlos Ruiz" loading="lazy"></div>
+                    <div class="team-info">
+                        <h3>Carlos Ruiz</h3>
+                        <span class="team-role">Barbero Senior</span>
+                        <p>Maestro en cortes clásicos y modernos. Experto en diseño de barba artístico.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80" alt="María Torres" loading="lazy"></div>
+                    <div class="team-info">
+                        <h3>María Torres</h3>
+                        <span class="team-role">Estilista & Maquilladora</span>
+                        <p>Especialista en peinados para eventos y maquillaje profesional de alto impacto.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-img"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=80" alt="Sofia Gómez" loading="lazy"></div>
+                    <div class="team-info">
+                        <h3>Sofía Gómez</h3>
+                        <span class="team-role">Nail Artist</span>
+                        <p>Artista de uñas con diseños únicos. Técnicas acrílicas, semipermanentes y nail art 3D.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="precios" class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Precios</span>
+                <h2 class="section-title">Lista de <span class="accent-text">precios</span></h2>
+            </div>
+            <div class="pricing-grid" id="pricing-grid">
+                <!-- JS Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reseñas</span>
+                <h2 class="section-title">Clientes <span class="accent-text">felices</span></h2>
+            </div>
+            <div class="testimonials-carousel" id="testimonials-carousel">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Laura transformó mi cabello por completo. El balayage quedó increíble y natural. ¡El mejor salón de la ciudad!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Andrea">
+                            <div><strong>Andrea M.</strong><span>Balayage + Corte</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Carlos es el mejor barbero que he tenido. El corte fade y el diseño de barba quedaron perfectos. Ambiente espectacular."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Diego">
+                            <div><strong>Diego R.</strong><span>Barbería Premium</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Mi peinado de novia fue un sueño. María entendió exactamente lo que quería. Las fotos quedaron espectaculares."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Valentina">
+                            <div><strong>Valentina S.</strong><span>Peinado de Novia</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"El sistema de citas online es súper práctico. Llegué y todo estaba listo. Los tratamientos capilares son de otro nivel."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Felipe">
+                            <div><strong>Felipe C.</strong><span>Tratamiento Keratina</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="citas" class="section appointment-section">
+        <div class="container">
+            <div class="appointment-grid">
+                <div class="appointment-info">
+                    <span class="section-tag">Agenda tu Cita</span>
+                    <h2 class="section-title">Reserva tu <span class="accent-text">momento</span></h2>
+                    <p>Elige tu servicio, estilista y horario preferido. ¡Te esperamos!</p>
+                    <div class="info-list">
+                        <div class="info-item"><i class="fa-solid fa-clock"></i><div><h4>Horario</h4><p>Lun - Sáb: 8:00 AM - 7:00 PM</p></div></div>
+                        <div class="info-item"><i class="fa-solid fa-location-dot"></i><div><h4>Ubicación</h4><p>Calle 72 #45-30, Centro Comercial Plaza</p></div></div>
+                        <div class="info-item"><i class="fa-solid fa-phone"></i><div><h4>Teléfono</h4><p>+57 314 374 8137</p></div></div>
+                    </div>
+                    <div class="salon-gallery-mini">
+                        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=300&q=80" alt="Interior salón">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=300&q=80" alt="Estación de trabajo">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=300&q=80" alt="Resultado final">
+                    </div>
+                </div>
+                <div class="appointment-form-wrap">
+                    <form id="appointment-form" class="appointment-form">
+                        <h3>✂️ Agendar Cita</h3>
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" id="apt-name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" id="apt-phone" placeholder="+57 3XX XXX XXXX" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Servicio</label>
+                                <select id="apt-service" required>
+                                    <option value="">Seleccionar</option>
+                                    <option>Corte de cabello</option>
+                                    <option>Color / Mechas</option>
+                                    <option>Tratamiento capilar</option>
+                                    <option>Manicure / Pedicure</option>
+                                    <option>Barbería</option>
+                                    <option>Maquillaje</option>
+                                    <option>Peinado para evento</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Estilista</label>
+                                <select id="apt-stylist">
+                                    <option value="">Sin preferencia</option>
+                                    <option>Laura Pérez</option>
+                                    <option>Carlos Ruiz</option>
+                                    <option>María Torres</option>
+                                    <option>Sofía Gómez</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                <input type="date" id="apt-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <select id="apt-time" required>
+                                    <option value="">Seleccionar</option>
+                                    <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+                                    <option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option>
+                                    <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Notas adicionales</label>
+                            <textarea id="apt-notes" rows="3" placeholder="Describe lo que buscas, referencias, etc..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width"><i class="fa-brands fa-whatsapp"></i> Confirmar Cita por WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">✂️ Estilo<span class="logo-accent">&Arte</span></div>
+                    <p>Tu salón de belleza de confianza. Donde la creatividad y el profesionalismo se unen para crear tu mejor versión.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://wa.me/573143748137"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <a href="#">Cortes</a><a href="#">Color</a><a href="#">Tratamientos</a><a href="#">Barbería</a><a href="#">Manicure</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Horario</h4>
+                    <p>Lunes - Sábado</p><p>8:00 AM - 7:00 PM</p><p>Domingo</p><p>Cerrado</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <p><i class="fa-solid fa-phone"></i> +57 314 374 8137</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@estiloarte.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Barranquilla, Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Estilo & Arte — Proyecto de Portafolio por <a href="../index.html">Keyner Orozco</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toast-container"></div>
+    <a href="https://wa.me/573143748137?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Estilo%20%26%20Arte" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

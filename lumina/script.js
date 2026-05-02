@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LUMINA STORE - Expert Engineer Edition
  * Architecture: Module-based Service Layer
  */
@@ -22,11 +22,19 @@ const ProductService = {
 
         const brands = ['Apex', 'Nova', 'Titan', 'Zenith', 'Echo', 'Vector', 'Lumina', 'Cyber', 'Aura', 'Quantum'];
         
+        // Curated Unsplash tech images for guaranteed quality
+        const techSeeds = [
+            '1505740420928-5e560c06d30e', '1523275335684-37898b6baf30', 
+            '1590658268037-6bf12165a8df', '1595225476474-87563907a212',
+            '1590602847861-f357a9332bbc', '1608043152269-423dbba4e7e1',
+            '1527864550417-7fd91fc51a46', '1622979135225-d2ba269cf1ac',
+            '1507582020474-9a35b7d455d9', '1516035069371-29a1b244cc32',
+            '1511707171634-5f897ff02aa9', '1496181133206-80ce9b88a853'
+        ];
+
         for (let i = 1; i <= window.CONFIG.PRODUCT_COUNT; i++) {
             const category = categories[Math.floor(Math.random() * categories.length)];
             const brand = brands[Math.floor(Math.random() * brands.length)];
-            const keywords = window.CONFIG.IMAGE_KEYWORDS[category];
-            const randomKeyword = keywords.split(',')[Math.floor(Math.random() * 3)];
             
             products.push({
                 id: i,
@@ -34,23 +42,11 @@ const ProductService = {
                 price: parseFloat(faker.commerce.price({ min: 49, max: 2499 })),
                 cat: category,
                 desc: faker.commerce.productDescription(),
-                img: `https://images.unsplash.com/photo-${faker.number.int({min: 1500000000000, max: 1700000000000})}?auto=format&fit=crop&w=800&q=80&sig=${i}&keywords=${randomKeyword}`,
+                img: `https://images.unsplash.com/photo-${techSeeds[(i - 1) % techSeeds.length]}?auto=format&fit=crop&w=800&q=80`,
                 badge: i % 4 === 0 ? 'NEW' : (i % 7 === 0 ? 'TOP' : ''),
                 class: ''
             });
         }
-        // Override Unsplash with more curated logic if seeds fail to look "tech"
-        products.forEach((p, idx) => {
-            const techSeeds = [
-                '1503926359681-285023f0a62d', '1523275335684-37898b6baf30', 
-                '1590658268037-6bf12165a8df', '1595225476474-87563907a212',
-                '1590602847861-f357a9332bbc', '1608043152269-423dbba4e7e1',
-                '1527864550417-7fd91fc51a46', '1622979135225-d2ba269cf1ac',
-                '1507582020474-9a35b7d455d9', '1516035069371-29a1b244cc32',
-                '1511707171634-5f897ff02aa9', '1496181133206-80ce9b88a853'
-            ];
-            p.img = `https://images.unsplash.com/photo-${techSeeds[idx % techSeeds.length]}?auto=format&fit=crop&w=800&q=80`;
-        });
         
         state.products = products;
     }
@@ -70,7 +66,7 @@ const CartService = {
         }
         this.save();
         UIService.renderCart();
-        UIService.showToast(`${product.title} a├▒adido.`);
+        UIService.showToast(`${product.title} agregado al carrito.`);
     },
 
     updateQty(productId, delta) {
@@ -103,14 +99,13 @@ const EmailService = {
     async sendConfirmation(customerData, orderDetails) {
         console.log("Preparing Resend payload...");
         
-        // Estructura oficial requerida por la API de Resend
         const payload = {
             from: `Lumina Store <${window.CONFIG.CONTACT_EMAIL}>`,
             to: [customerData.email],
-            subject: `Confirmaci├│n de Pedido #${Math.floor(Math.random() * 1000000)}`,
+            subject: `Confirmacion de Pedido #${Math.floor(Math.random() * 1000000)}`,
             html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee;">
-                    <h1 style="color: #1a1a1a;">┬íGracias por tu compra, ${customerData.name}!</h1>
+                    <h1 style="color: #1a1a1a;">Gracias por tu compra, ${customerData.name}!</h1>
                     <p>Hemos recibido tu pedido y lo estamos procesando.</p>
                     <hr>
                     <h3>Resumen del Pedido</h3>
@@ -118,7 +113,7 @@ const EmailService = {
                         ${orderDetails.items.map(i => `<li>${i.title} (x${i.qty}) - $${(i.price * i.qty).toFixed(2)}</li>`).join('')}
                     </ul>
                     <p><strong>Total: $${orderDetails.total.toFixed(2)}</strong></p>
-                    <p>Direcci├│n de env├¡o: ${customerData.address}</p>
+                    <p>Direccion de envio: ${customerData.address}</p>
                     <hr>
                     <p style="font-size: 12px; color: #888;">Lumina Store Demo - No es una tienda real.</p>
                 </div>
@@ -130,10 +125,9 @@ const EmailService = {
 
         console.log("Resend API Simulation:", payload);
         
-        // Simulaci├│n de fetch a Resend
         return new Promise((resolve) => {
             setTimeout(() => {
-                console.log("Email enviado exitosamente v├¡a Resend.");
+                console.log("Email enviado exitosamente via Resend.");
                 resolve({ success: true, messageId: 'resend_msg_' + Date.now() });
             }, 1500);
         });
@@ -147,6 +141,7 @@ const UIService = {
         this.renderCatalog();
         this.renderCart();
         this.initAnimations();
+        this.initScrollReveal();
     },
 
     setupEventListeners() {
@@ -197,6 +192,15 @@ const UIService = {
         document.getElementById('close-modal').addEventListener('click', () => {
             document.getElementById('quick-view-modal').classList.remove('active');
         });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
     },
 
     renderCatalog() {
@@ -211,7 +215,7 @@ const UIService = {
             <div class="product-card reveal-up" style="--delay: ${(i % 4) * 0.1}s" onclick="UIService.quickView(${p.id})">
                 <div class="prod-img-box">
                     ${p.badge ? `<span class="badge ${p.badge === 'OFERTA' ? 'sale' : ''}">${p.badge}</span>` : ''}
-                    <img src="${p.img}" alt="${p.title}" class="prod-img">
+                    <img src="${p.img}" alt="${p.title}" class="prod-img" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80'">
                     <div class="prod-actions-overlay">
                         <button class="icon-btn" onclick="event.stopPropagation(); CartService.add(${p.id})">
                             <i class="fa-solid fa-plus"></i>
@@ -245,7 +249,7 @@ const UIService = {
         totalElement.textContent = `$${CartService.getTotal().toFixed(2)}`;
 
         if (state.cart.length === 0) {
-            itemsContainer.innerHTML = '<div class="empty-cart-msg">Tu carrito est├í vac├¡o.</div>';
+            itemsContainer.innerHTML = '<div class="empty-cart-msg">Tu carrito esta vacio.</div>';
             return;
         }
 
@@ -359,10 +363,25 @@ const UIService = {
         gsap.from(".hero-title", { opacity: 0, y: 50, duration: 1, delay: 1.5 });
         gsap.from(".hero-subtitle", { opacity: 0, y: 30, duration: 1, delay: 1.7 });
         gsap.from(".hero-actions", { opacity: 0, y: 20, duration: 1, delay: 1.9 });
+        gsap.from(".hero-img", { opacity: 0, scale: 0.8, duration: 1.2, delay: 1.3, ease: "back.out(1.2)" });
+    },
+
+    initScrollReveal() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-text').forEach(el => {
+            observer.observe(el);
+        });
     }
 };
 
-// --- 6. CHECKOUT SERVICE (Logic & Validation) ---
+// --- 6. CHECKOUT SERVICE ---
 const CheckoutService = {
     async handleOrder(event) {
         event.preventDefault();
@@ -384,16 +403,14 @@ const CheckoutService = {
         };
 
         try {
-            // Llamada al servicio de Email (Resend)
             await EmailService.sendConfirmation(customerData, orderDetails);
             
-            UIService.showToast("┬íPedido confirmado! Revisa tu email.");
+            UIService.showToast("Pedido confirmado! Revisa tu email.");
             state.cart = [];
             CartService.save();
             UIService.renderCart();
             UIService.toggleCheckoutModal(false);
             
-            // ├ëxito visual
             this.showSuccessAnimation();
         } catch (error) {
             UIService.showToast("Error al procesar el pedido.", "error");
@@ -409,8 +426,8 @@ const CheckoutService = {
         successOverlay.innerHTML = `
             <div class="success-card">
                 <i class="fa-solid fa-circle-check"></i>
-                <h2>┬íCompra Exitosa!</h2>
-                <p>Tu orden ha sido enviada v├¡a Resend.</p>
+                <h2>Compra Exitosa!</h2>
+                <p>Tu orden ha sido enviada via Resend.</p>
                 <button class="btn-primary" onclick="this.parentElement.parentElement.remove()">Volver a la tienda</button>
             </div>
         `;

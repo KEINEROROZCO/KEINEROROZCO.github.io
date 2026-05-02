@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumina | Next-Gen E-Commerce</title>
-    <meta name="description" content="Lumina - La tienda de e-commerce de proxima generacion. Audio espacial, wearables y tecnologia de vanguardia.">
+    <meta name="description" content="Lumina - La tienda de e-commerce de próxima generación. Audio espacial, wearables y tecnología de vanguardia.">
     <meta name="keywords" content="e-commerce, lumina, tech, premium, gadgets, audio, wearables">
     <meta property="og:title" content="Lumina | Next-Gen E-Commerce">
-    <meta property="og:description" content="Experimenta la nueva generacion de tecnologia con Lumina.">
+    <meta property="og:description" content="Experimenta la nueva generación de tecnología con Lumina.">
     <meta property="og:image" content="../img/project-ecommerce.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="shortcut icon" href="../img/project-ecommerce.png" type="image/png">
     
-    <!-- Scripts & Frameworks -->
     <script src="https://cdn.jsdelivr.net/npm/@faker-js/faker@8.4.1/dist/faker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     
@@ -34,14 +33,12 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Lumina.</a>
-            
             <nav class="nav-links">
                 <a href="#inicio" class="nav-link">Inicio</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
-                <a href="#coleccion" class="nav-link">Coleccion</a>
-                <a href="#filosofia" class="nav-link">Filosofia</a>
+                <a href="#coleccion" class="nav-link">Colección</a>
+                <a href="#filosofia" class="nav-link">Filosofía</a>
             </nav>
-            
             <div class="nav-actions">
                 <div class="search-box" id="search-box">
                     <input type="text" id="search-input" placeholder="Buscar productos...">
@@ -64,16 +61,14 @@
             <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
-            <div class="empty-cart-msg">Tu carrito esta vacio.</div>
+            <div class="empty-cart-msg">Tu carrito está vacío.</div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Total</span>
                 <span id="cart-total-price">$0.00</span>
             </div>
-            <button class="btn-primary checkout-btn" id="checkout-main-btn">
-                Proceder al pago
-            </button>
+            <button class="btn-primary checkout-btn" id="checkout-main-btn">Proceder al pago</button>
         </div>
     </div>
 
@@ -86,35 +81,21 @@
                     <h2>Finalizar Pedido</h2>
                     <form id="checkout-form">
                         <div class="input-row">
-                            <div class="input-group">
-                                <label>Nombre Completo</label>
-                                <input type="text" id="cust-name" required placeholder="Ej: John Doe">
-                            </div>
+                            <div class="input-group"><label>Nombre Completo</label><input type="text" id="cust-name" required placeholder="Ej: John Doe"></div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group">
-                                <label>Email</label>
-                                <input type="email" id="cust-email" required placeholder="tu@email.com">
-                            </div>
+                            <div class="input-group"><label>Email</label><input type="email" id="cust-email" required placeholder="tu@email.com"></div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group">
-                                <label>Direccion de Envio</label>
-                                <input type="text" id="cust-address" required placeholder="Calle, Ciudad, Codigo Postal">
-                            </div>
+                            <div class="input-group"><label>Dirección de Envío</label><input type="text" id="cust-address" required placeholder="Calle, Ciudad, Código Postal"></div>
                         </div>
-                        <button type="submit" class="btn-primary" style="width:100%; margin-top: 1.5rem;">
-                            Confirmar Compra
-                        </button>
+                        <button type="submit" class="btn-primary" style="width:100%; margin-top: 1.5rem;">Confirmar Compra</button>
                     </form>
                 </div>
                 <div class="checkout-summary-col">
                     <h3>Resumen</h3>
                     <div id="checkout-summary-list"></div>
-                    <div class="summary-total">
-                        <span>Total a pagar</span>
-                        <span id="summary-total-price">$0.00</span>
-                    </div>
+                    <div class="summary-total"><span>Total a pagar</span><span id="summary-total-price">$0.00</span></div>
                 </div>
             </div>
         </div>
@@ -133,10 +114,10 @@
         <div class="hero-bg-glow"></div>
         <div class="hero-content">
             <h1 class="hero-title reveal-text">Sonido que<br>puedes ver.</h1>
-            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generacion de audio espacial. Diseno ultraligero y fidelidad acustica sin precedentes.</p>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
             <div class="hero-actions reveal-up" style="--delay: 0.4s">
                 <button class="btn-primary magnetic-btn" onclick="CartService.add(1)">Comprar ahora</button>
-                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir mas</a>
+                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir más</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -150,55 +131,55 @@
     <!-- Infinite Marquee -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>NUEVA COLECCION 2026</span> &bull; 
+            <span>NUEVA COLECCIÓN 2026</span> &bull; 
             <span>AUDIO ESPACIAL 3D</span> &bull; 
-            <span>DISENO MINIMALISTA</span> &bull; 
-            <span>CANCELACION DE RUIDO ACTIVA</span> &bull; 
-            <span>NUEVA COLECCION 2026</span> &bull; 
+            <span>DISEÑO MINIMALISTA</span> &bull; 
+            <span>CANCELACIÓN DE RUIDO ACTIVA</span> &bull; 
+            <span>NUEVA COLECCIÓN 2026</span> &bull; 
             <span>AUDIO ESPACIAL 3D</span> &bull; 
-            <span>DISENO MINIMALISTA</span> &bull; 
-            <span>CANCELACION DE RUIDO ACTIVA</span> &bull; 
+            <span>DISEÑO MINIMALISTA</span> &bull; 
+            <span>CANCELACIÓN DE RUIDO ACTIVA</span> &bull; 
         </div>
     </div>
 
     <!-- Bento Box Features -->
     <section id="experiencia" class="bento-section">
         <div class="section-heading text-center reveal-up">
-            <h2 class="massive-text">Redefiniendo <br>lo posible.</h2>
+            <h2 class="massive-text">Redefiniendo<br>lo posible.</h2>
         </div>
         
         <div class="bento-grid">
             <div class="bento-item box-large reveal-up" style="background-color: #f8fafc; overflow: hidden;">
                 <div class="bento-content">
-                    <span class="bento-tag">Tecnologia</span>
-                    <h3>Procesador Cuantico</h3>
-                    <p>Procesamiento de 24 nucleos que analiza el entorno 100,000 veces por segundo para una interaccion perfecta.</p>
+                    <span class="bento-tag">Tecnología</span>
+                    <h3>Procesador Cuántico</h3>
+                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una interacción perfecta.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Procesador cuantico" class="bento-img bento-float" style="width: 55%; bottom: -5%; right: -3%;">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Procesador cuántico" class="bento-img bento-float" style="width: 55%; bottom: -5%; right: -3%;">
             </div>
             
             <div class="bento-item box-medium reveal-up" style="background-color: #f1f5f9; --delay: 0.1s;">
                 <div class="bento-content">
-                    <span class="bento-tag">Bateria</span>
+                    <span class="bento-tag">Batería</span>
                     <h3>40 horas non-stop.</h3>
-                    <p>Autonomia lider en la industria con carga ultrarapida.</p>
+                    <p>Autonomía líder en la industria con carga ultrarrápida.</p>
                 </div>
                 <div class="bento-icon"><i class="fa-solid fa-battery-full"></i></div>
             </div>
             
             <div class="bento-item box-medium reveal-up" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; --delay: 0.2s;">
                 <div class="bento-content">
-                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Diseno</span>
+                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Diseño</span>
                     <h3 style="color: white;">Titanio Aeroespacial</h3>
-                    <p style="color: #cbd5e1;">Mas resistente, 30% mas ligero.</p>
+                    <p style="color: #cbd5e1;">Más resistente, 30% más ligero.</p>
                 </div>
             </div>
             
             <div class="bento-item box-wide reveal-up" style="background-color: #e0f2fe; --delay: 0.3s;">
                 <div class="bento-content">
                     <span class="bento-tag" style="color: #0284c7; border-color: rgba(2,132,199,0.2);">Ecosistema</span>
-                    <h3>Conexion instantanea.</h3>
-                    <p>Acercalo a cualquiera de tus dispositivos y listo.</p>
+                    <h3>Conexión instantánea.</h3>
+                    <p>Acércalo a cualquiera de tus dispositivos y listo.</p>
                 </div>
             </div>
         </div>
@@ -212,19 +193,19 @@
             </div>
             <div class="showcase-content">
                 <div class="showcase-block reveal-left">
-                    <h3 class="gradient-text-alt">01 / Inmersion</h3>
+                    <h3 class="gradient-text-alt">01 / Inmersión</h3>
                     <h2>Siente cada instrumento.</h2>
-                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos nitidos y graves que retumban en el pecho sin distorsion.</p>
+                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos nítidos y graves que retumban en el pecho sin distorsión.</p>
                 </div>
                 <div class="showcase-block reveal-left">
                     <h3 class="gradient-text-alt">02 / Confort</h3>
                     <h2>Como no llevar nada.</h2>
-                    <p>Almohadillas de espuma viscoelastica envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
+                    <p>Almohadillas de espuma viscoelástica envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
                 </div>
                 <div class="showcase-block reveal-left">
                     <h3 class="gradient-text-alt">03 / Control</h3>
                     <h2>Todo en un toque.</h2>
-                    <p>Controles tactiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el telefono.</p>
+                    <p>Controles táctiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el teléfono.</p>
                 </div>
             </div>
         </div>
@@ -233,7 +214,7 @@
     <!-- Product Collection Grid -->
     <section id="coleccion" class="collection-section">
         <div class="section-heading text-center reveal-up">
-            <h2 class="massive-text">La Coleccion.</h2>
+            <h2 class="massive-text">La Colección.</h2>
             <div class="filters">
                 <button class="filter-btn active" data-filter="all">Ver Todo</button>
                 <button class="filter-btn" data-filter="audio">Audio</button>
@@ -256,22 +237,22 @@
             <div class="testim-track">
                 <div class="testim-card">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"El diseno industrial es de otro nivel. Parecen una pieza de arte de museo que ademas suena increible."</p>
+                    <p>"El diseño industrial es de otro nivel. Parecen una pieza de arte de museo que además suena increíble."</p>
                     <strong>- Revista TechTrend</strong>
                 </div>
                 <div class="testim-card">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Simplemente perfectos. El peso es ideal, la bateria no se acaba nunca y el sonido es puro."</p>
+                    <p>"Simplemente perfectos. El peso es ideal, la batería no se acaba nunca y el sonido es puro."</p>
                     <strong>- Marco P.</strong>
                 </div>
                 <div class="testim-card">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinacion de estetica y funcionalidad."</p>
+                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinación de estética y funcionalidad."</p>
                     <strong>- AudioPro Blog</strong>
                 </div>
                 <div class="testim-card">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"La interaccion con el ecosistema es magica. Fue sacarlos de la caja y ya estaban sonando."</p>
+                    <p>"La interacción con el ecosistema es mágica. Fue sacarlos de la caja y ya estaban sonando."</p>
                     <strong>- Sarah T.</strong>
                 </div>
             </div>
@@ -283,14 +264,13 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h2 class="logo-large">Lumina.</h2>
-                <p>Disenando el futuro de la tecnologia personal. Minimalismo, potencia y elegancia en cada detalle.</p>
+                <p>Diseñando el futuro de la tecnología personal. Minimalismo, potencia y elegancia en cada detalle.</p>
                 <div class="social-icons">
                     <a href="#" class="magnetic-btn"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="#" class="magnetic-btn"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="magnetic-btn"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-links-group">
                 <h4>Explorar</h4>
                 <a href="#">Audio Premium</a>
@@ -298,15 +278,13 @@
                 <a href="#">Estaciones Gaming</a>
                 <a href="#">Accesorios</a>
             </div>
-            
             <div class="footer-links-group">
                 <h4>Soporte</h4>
                 <a href="#">Centro de Ayuda</a>
-                <a href="#">Garantia Lumina Care</a>
+                <a href="#">Garantía Lumina Care</a>
                 <a href="#">Estado de Pedido</a>
                 <a href="#">Devoluciones</a>
             </div>
-            
             <div class="footer-newsletter">
                 <h4>Mantente Informado</h4>
                 <p>Recibe noticias sobre nuevos lanzamientos antes que nadie.</p>
@@ -316,20 +294,17 @@
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2026 Lumina E-Commerce Demo. Desarrollado por Keyner Orozco.</p>
             <div class="legal-links">
                 <a href="#">Privacidad</a>
-                <a href="#">Terminos</a>
+                <a href="#">Términos</a>
             </div>
         </div>
     </footer>
 
-    <!-- Toast Container -->
     <div id="toast-container" class="toast-container"></div>
 
-    <!-- Scripts -->
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>

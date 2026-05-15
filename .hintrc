@@ -23,7 +23,8 @@
     "disown-opener": "off",
     "button-type": "off",
     "axe/forms": "off",
-    "axe/text-alternatives": "off"
+    "axe/text-alternatives": "off",
+    "css-prefix-order": "off"
   },
   "browserslist": [
     "defaults",

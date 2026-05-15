@@ -336,10 +336,12 @@ nav ul a::after {
     border-radius: 100px;
     transition: width 0.4s var(--ease-out-expo);
 }
-nav ul a:hover {
+nav ul a:hover,
+nav ul a.active-link {
     color: var(--white);
 }
-nav ul a:hover::after {
+nav ul a:hover::after,
+nav ul a.active-link::after {
     width: 100%;
 }
 
@@ -2059,22 +2061,35 @@ footer {
 }
 .whatsapp-float:hover .wa-tooltip { opacity: 1; }
 
+/* ===== PAUSED STATE ===== */
+body.paused .orb,
+body.paused .geo,
+body.paused .marquee-track,
+body.paused .badge-dot,
+body.paused .scroll-wheel,
+body.paused .loader-k,
+body.paused .loader-o,
+body.paused .loader-dot {
+    animation-play-state: paused;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
     .skills-grid { grid-template-columns: repeat(3, 1fr); }
-    .hero-stats-float { display: none; }
+    .hero-stats-float { flex-wrap: wrap; gap: 20px; }
     .pricing-card.featured { transform: scale(1); }
     .pricing-card.featured:hover { transform: translateY(-8px); }
 }
 
 @media (max-width: 900px) {
-    .projects-showcase { grid-template-columns: 1fr; max-width: 500px; }
+    .projects-showcase { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: 1fr; max-width: 500px; }
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
     .about-right { order: -1; }
     .contact-layout { grid-template-columns: 1fr; gap: 40px; }
     .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .hero-stats-float { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -2086,11 +2101,12 @@ footer {
         letter-spacing: -2px;
     }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-showcase { grid-template-columns: 1fr; max-width: 500px; }
     .form-row { grid-template-columns: 1fr; }
     .contact-form { padding: 28px; }
     .cta-inner { padding: 40px 24px; }
 
-    .cursor-dot, .cursor-glow, #cursor-trail-canvas { display: none; }
+    .cursor-dot, .cursor-glow, #cursor-trail-canvas, #particle-canvas { display: none; }
     body { cursor: auto; }
     a, button { cursor: pointer; }
     .btn-magic, .btn-glass, .service-card-v2, .skill-card, .project-card-v2 { cursor: pointer; }
@@ -2102,6 +2118,7 @@ footer {
 
     .whatsapp-float { width: 54px; height: 54px; font-size: 1.4rem; bottom: 20px; right: 20px; }
     .wa-tooltip { display: none; }
+    .back-to-top { bottom: 82px !important; right: 20px !important; }
 }
 
 @media (max-width: 480px) {
@@ -2110,4 +2127,7 @@ footer {
     section { padding: 80px 20px; }
     .marquee-strip { display: none; }
     .process-step { flex-wrap: wrap; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn-magic,
+    .hero-actions .btn-glass { text-align: center; justify-content: center; }
 }

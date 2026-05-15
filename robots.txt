@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keinerorozco.github.io/sitemap.xml
+
+# Keyner Orozco — Desarrollador Web Full-Stack
+# https://keinerorozco.github.io

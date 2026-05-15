@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Lumina Air Max - Sonido que puedes ver</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -113,185 +104,157 @@
     <style>
         .glass-panel {
             background: rgba(32, 31, 31, 0.4);
-            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .glow-border-cyan {
             border: 1px solid transparent;
             background-image: linear-gradient(rgba(32, 31, 31, 0.4), rgba(32, 31, 31, 0.4)), linear-gradient(to bottom right, #00f2ff, transparent);
             background-origin: border-box;
             background-clip: padding-box, border-box;
         }
-
         .glow-border-purple {
             border: 1px solid transparent;
             background-image: linear-gradient(rgba(32, 31, 31, 0.4), rgba(32, 31, 31, 0.4)), linear-gradient(to bottom right, #7000ff, transparent);
             background-origin: border-box;
             background-clip: padding-box, border-box;
         }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3a3939;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2ff;
+        }
     </style>
 </head>
-
-<body
-    class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full bg-surface/10 backdrop-blur-[20px] border-b border-white/20 z-50">
-        <div
-            class="flex justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-4 w-full max-w-container-max mx-auto">
+        <div class="flex justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-4 w-full max-w-container-max mx-auto">
             <div class="font-headline-md text-headline-md-mobile md:text-headline-md tracking-tighter text-on-surface">
                 Lumina Air Max
             </div>
             <div class="hidden md:flex items-center gap-stack-lg">
-                <a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1 hover:text-primary-fixed-dim transition-colors duration-300"
-                    href="#">Sound</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
-                    href="#">Design</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
-                    href="#">Specs</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
-                    href="#">Reviews</a>
+                <a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1 hover:text-primary-fixed-dim transition-colors duration-300" href="#">Audio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="#">Diseño</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="#">Specs</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="../index.html">Regresar al Portafolio</a>
             </div>
-            <button
-                class="hidden md:block bg-primary-container/10 border border-primary-container text-primary-fixed-dim px-6 py-2 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/20 hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] scale-95 active:scale-90 transition-all duration-300">
-                Buy Now
+            <button class="hidden md:block bg-primary-container/10 border border-primary-container text-primary-fixed-dim px-6 py-2 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/20 hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] scale-95 active:scale-90 transition-all duration-300">
+                Comprar Ahora
             </button>
             <button class="md:hidden text-on-surface">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </nav>
+
     <!-- Hero Section -->
     <header class="relative w-full min-h-[100vh] flex items-center justify-center pt-24 pb-section-gap overflow-hidden">
         <!-- Atmospheric Glow -->
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-container/20 rounded-full blur-[120px] z-0 pointer-events-none">
-        </div>
-        <div
-            class="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary-container/15 rounded-full blur-[100px] z-0 pointer-events-none">
-        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-container/20 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+        <div class="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary-container/15 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+        
         <div class="absolute inset-0 z-0">
-            <img alt="Lumina Air Max Hero" class="w-full h-full object-cover opacity-80 mix-blend-lighten"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBls3PXtBQRp4kA6DBbeit0pAFqatgk0GrIuuszU38nKX-L2wk3YbrHbwuxee-RTINaL_h0ZxF7DCe6u3KSNAhokpLWxnFL4tw8reyRjSsyQ1-z6pQDDnjm2gCkHz2cSE6p59GE9uY_0R1sFJbSPGyg5JqETHXeiMIYkf0Lk22X6bojfR6seIvSlSmDNMtUXXuj3bWU0CW37-Y083UzyV9HefmaoWxLQ54dsRJVGW-TxHecJdfgPfGcj81n_2RJzuKmk35HuOo6At8" />
+            <img alt="Lumina Air Max Hero" class="w-full h-full object-cover opacity-80 mix-blend-lighten" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=90"/>
             <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
         </div>
-        <div
-            class="relative z-10 flex flex-col items-center text-center px-edge-margin-mobile md:px-edge-margin-desktop max-w-4xl mx-auto mt-20">
-            <h1
-                class="font-display-xl text-[56px] leading-[64px] md:text-display-xl text-on-surface mb-stack-md drop-shadow-2xl">
-                Sonido que <br class="md:hidden" /><span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed-dim to-secondary-fixed-dim">puedes
-                    ver</span>
+
+        <div class="relative z-10 flex flex-col items-center text-center px-edge-margin-mobile md:px-edge-margin-desktop max-w-4xl mx-auto mt-20">
+            <h1 class="font-display-xl text-[56px] leading-[64px] md:text-display-xl text-on-surface mb-stack-md drop-shadow-2xl">
+                Sonido que <br class="md:hidden"/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed-dim to-secondary-fixed-dim">puedes ver</span>
             </h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">
-                Adéntrate en el futuro del audio de alta fidelidad. Ingeniería aeroespacial y procesamiento cuántico
-                convergen en una obra maestra acústica diseñada para los más exigentes.
+                Adéntrate en el futuro del audio de alta fidelidad. Ingeniería aeroespacial y procesamiento cuántico convergen en una obra maestra acústica diseñada para los más exigentes.
             </p>
             <div class="flex flex-col sm:flex-row gap-stack-md w-full sm:w-auto">
-                <button
-                    class="bg-primary-container/20 border border-primary-container text-primary-fixed-dim px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/30 hover:shadow-[0_0_20px_rgba(0,242,255,0.5)] transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
+                <button class="bg-primary-container/20 border border-primary-container text-primary-fixed-dim px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/30 hover:shadow-[0_0_20px_rgba(0,242,255,0.5)] transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
                     Comprar ahora
-                    <span class="material-symbols-outlined"
-                        style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
                 </button>
-                <button
-                    class="glass-panel text-on-surface px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-surface-container/60 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined"
-                        style="font-variation-settings: 'FILL' 0;">play_circle</span>
+                <button class="glass-panel text-on-surface px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-surface-container/60 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">play_circle</span>
                     Ver video
                 </button>
             </div>
         </div>
     </header>
+
     <!-- Feature Section (Bento Grid) -->
     <section class="py-section-gap px-edge-margin-mobile md:px-edge-margin-desktop relative">
         <div class="max-w-container-max mx-auto">
             <div class="mb-stack-lg text-center md:text-left">
-                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Arquitectura
-                    Sónica</h2>
-                <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Tecnología sin precedentes en cada
-                    milímetro.</p>
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Arquitectura Sónica</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Tecnología sin precedentes en cada milímetro.</p>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md md:gap-stack-lg">
                 <!-- Box 1: Procesador Cuántico -->
-                <div
-                    class="md:col-span-8 glow-border-cyan rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-[80px] -mr-20 -mt-20 transition-opacity group-hover:opacity-100 opacity-50">
-                    </div>
+                <div class="md:col-span-8 glow-border-cyan rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-[80px] -mr-20 -mt-20 transition-opacity group-hover:opacity-100 opacity-50"></div>
                     <div class="relative z-10 flex flex-col h-full">
-                        <div
-                            class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-stack-md border border-primary-container/30 text-primary-fixed-dim">
+                        <div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-stack-md border border-primary-container/30 text-primary-fixed-dim">
                             <span class="material-symbols-outlined text-3xl">memory</span>
                         </div>
                         <div class="mt-auto">
-                            <h3
-                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
-                                Procesador Cuántico</h3>
+                            <h3 class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">Procesador Cuántico</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                                Potencia extrema de cálculo en tiempo real. Analiza y optimiza el espectro sonoro
-                                100,000 veces por segundo para una claridad cristalina absoluta.
+                                Potencia extrema de cálculo en tiempo real. Analiza y optimiza el espectro sonoro 100,000 veces por segundo para una claridad cristalina absoluta.
                             </p>
                         </div>
                     </div>
                 </div>
+
                 <!-- Box 2: 40 horas non-stop -->
-                <div
-                    class="md:col-span-4 glow-border-purple rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
-                    <div
-                        class="absolute bottom-0 right-0 w-48 h-48 bg-secondary-container/10 rounded-full blur-[60px] -mr-10 -mb-10 transition-opacity group-hover:opacity-100 opacity-50">
-                    </div>
+                <div class="md:col-span-4 glow-border-purple rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
+                    <div class="absolute bottom-0 right-0 w-48 h-48 bg-secondary-container/10 rounded-full blur-[60px] -mr-10 -mb-10 transition-opacity group-hover:opacity-100 opacity-50"></div>
                     <div class="relative z-10 flex flex-col h-full">
-                        <div
-                            class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-stack-md border border-secondary-container/30 text-secondary-fixed-dim">
+                        <div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-stack-md border border-secondary-container/30 text-secondary-fixed-dim">
                             <span class="material-symbols-outlined text-3xl">battery_charging_full</span>
                         </div>
                         <div class="mt-auto">
-                            <h3
-                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
-                                40 horas non-stop</h3>
+                            <h3 class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">40 horas non-stop</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant">
-                                Autonomía extendida. Energía inagotable para viajes intercontinentales sin necesidad de
-                                recarga.
+                                Autonomía extendida. Energía inagotable para viajes intercontinentales sin necesidad de recarga.
                             </p>
                         </div>
                     </div>
                 </div>
+
                 <!-- Box 3: Titanio Aeroespacial -->
-                <div
-                    class="md:col-span-5 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
+                <div class="md:col-span-5 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
                     <div class="relative z-10 flex flex-col h-full">
-                        <div
-                            class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
+                        <div class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
                             <span class="material-symbols-outlined text-3xl">rocket_launch</span>
                         </div>
                         <div class="mt-auto">
-                            <h3
-                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
-                                Titanio Aeroespacial</h3>
+                            <h3 class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">Titanio Aeroespacial</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant">
-                                Forjados para la eternidad. Una aleación ultraligera que ofrece durabilidad extrema sin
-                                comprometer el confort prolongado.
+                                Forjados para la eternidad. Una aleación ultraligera que ofrece durabilidad extrema sin comprometer el confort prolongado.
                             </p>
                         </div>
                     </div>
                 </div>
+
                 <!-- Box 4: Conexión instantánea -->
-                <div
-                    class="md:col-span-7 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
+                <div class="md:col-span-7 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
                     <div class="relative z-10 flex flex-col h-full">
-                        <div
-                            class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
+                        <div class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
                             <span class="material-symbols-outlined text-3xl">wifi_tethering</span>
                         </div>
                         <div class="mt-auto">
-                            <h3
-                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
-                                Conexión instantánea</h3>
+                            <h3 class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">Conexión instantánea</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                                Integración absoluta en tu ecosistema digital. Cambios de dispositivo fluidos e
-                                invisibles gracias a nuestro protocolo de transmisión propietario de baja latencia.
+                                Integración absoluta en tu ecosistema digital. Cambios de dispositivo fluidos e invisibles gracias a nuestro protocolo de transmisión propietario de baja latencia.
                             </p>
                         </div>
                     </div>
@@ -299,56 +262,45 @@
             </div>
         </div>
     </section>
+
     <!-- Spacer to prevent content from hiding behind sticky bar -->
     <div class="h-32 w-full"></div>
+
     <!-- Sticky Bottom Bar -->
-    <div
-        class="fixed bottom-0 left-0 w-full z-40 bg-surface/80 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-        <div
-            class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="fixed bottom-0 left-0 w-full z-40 bg-surface/80 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-stack-lg w-full md:w-auto justify-between md:justify-start">
                 <div class="flex flex-col">
-                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio
-                        Exclusivo</span>
-                    <span class="font-headline-md text-[24px] leading-[32px] md:text-[32px] text-on-surface">$499
-                        USD</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio Exclusivo</span>
+                    <span class="font-headline-md text-[24px] leading-[32px] md:text-[32px] text-on-surface">$499 USD</span>
                 </div>
                 <div class="flex items-center gap-3 border-l border-white/10 pl-stack-lg">
                     <span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:block">COLOR:</span>
-                    <button aria-label="Titanium"
-                        class="w-8 h-8 rounded-full bg-[#8A8D91] border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
-                    <button aria-label="Neon Cyan"
-                        class="w-8 h-8 rounded-full bg-primary-container border-2 border-white shadow-[0_0_10px_rgba(0,242,255,0.5)] transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
-                    <button aria-label="Purple"
-                        class="w-8 h-8 rounded-full bg-secondary-container border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                    <button aria-label="Titanium" class="w-8 h-8 rounded-full bg-[#8A8D91] border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                    <button aria-label="Neon Cyan" class="w-8 h-8 rounded-full bg-primary-container border-2 border-white shadow-[0_0_10px_rgba(0,242,255,0.5)] transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                    <button aria-label="Purple" class="w-8 h-8 rounded-full bg-secondary-container border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
                 </div>
             </div>
-            <button
-                class="w-full md:w-auto bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-fixed shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all duration-300">
+            <button class="w-full md:w-auto bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-fixed shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all duration-300">
                 Finalizar Compra
             </button>
         </div>
     </div>
+
     <!-- Footer -->
-    <footer
-        class="w-full bg-surface-container-lowest border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-stack-lg gap-stack-md relative z-10 pb-32 md:pb-stack-lg">
+    <footer class="w-full bg-surface-container-lowest border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-stack-lg gap-stack-md relative z-10 pb-32 md:pb-stack-lg">
         <div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
             Lumina Audio
         </div>
         <div class="flex flex-wrap justify-center gap-stack-md md:gap-stack-lg">
-            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
-                href="#">Privacy</a>
-            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
-                href="#">Terms</a>
-            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
-                href="#">Support</a>
-            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
-                href="#">Contact</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
         </div>
         <div class="font-body-md text-body-md text-on-surface-variant">
             © 2024 Lumina Audio. All rights reserved.
         </div>
     </footer>
 </body>
-
 </html>

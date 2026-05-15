@@ -292,6 +292,11 @@ const revealObserver = new IntersectionObserver(
 // Skills staggered
 document.querySelectorAll('.skill-card.reveal-item').forEach((card, i) => {
     card.style.transitionDelay = (i * 0.08) + 's';
+    const ringFill = card.querySelector('.ring-fill');
+    if (ringFill) {
+        const percent = ringFill.getAttribute('data-percent');
+        if (percent) ringFill.style.setProperty('--percent', percent);
+    }
     revealObserver.observe(card);
 });
 

@@ -89,7 +89,7 @@
                         <div class="input-row">
                             <div class="input-group"><label>Dirección de Envío</label><input type="text" id="cust-address" required placeholder="Calle, Ciudad, Código Postal"></div>
                         </div>
-                        <button type="submit" class="btn-primary" style="width:100%; margin-top: 1.5rem;">Confirmar Compra</button>
+                        <button type="submit" class="btn-primary checkout-confirm-btn">Confirmar Compra</button>
                     </form>
                 </div>
                 <div class="checkout-summary-col">
@@ -114,8 +114,8 @@
         <div class="hero-bg-glow"></div>
         <div class="hero-content">
             <h1 class="hero-title reveal-text">Sonido que<br>puedes ver.</h1>
-            <p class="hero-subtitle reveal-up" style="--delay: 0.2s">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
-            <div class="hero-actions reveal-up" style="--delay: 0.4s">
+            <p class="hero-subtitle reveal-up hero-subtitle-delay">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
+            <div class="hero-actions reveal-up hero-actions-delay">
                 <button class="btn-primary magnetic-btn" onclick="CartService.add(1)">Comprar ahora</button>
                 <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir más</a>
             </div>
@@ -149,16 +149,16 @@
         </div>
         
         <div class="bento-grid">
-            <div class="bento-item box-large reveal-up" style="background-color: #f8fafc; overflow: hidden;">
+            <div class="bento-item box-large reveal-up bento-tech">
                 <div class="bento-content">
                     <span class="bento-tag">Tecnología</span>
                     <h3>Procesador Cuántico</h3>
                     <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una interacción perfecta.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Procesador cuántico" class="bento-img bento-float" style="width: 55%; bottom: -5%; right: -3%;">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Procesador cuántico" class="bento-img bento-float bento-img-tech">
             </div>
             
-            <div class="bento-item box-medium reveal-up" style="background-color: #f1f5f9; --delay: 0.1s;">
+            <div class="bento-item box-medium reveal-up bento-battery">
                 <div class="bento-content">
                     <span class="bento-tag">Batería</span>
                     <h3>40 horas non-stop.</h3>
@@ -167,17 +167,17 @@
                 <div class="bento-icon"><i class="fa-solid fa-battery-full"></i></div>
             </div>
             
-            <div class="bento-item box-medium reveal-up" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; --delay: 0.2s;">
+            <div class="bento-item box-medium reveal-up bento-design">
                 <div class="bento-content">
-                    <span class="bento-tag" style="color: #94a3b8; border-color: rgba(255,255,255,0.2);">Diseño</span>
-                    <h3 style="color: white;">Titanio Aeroespacial</h3>
-                    <p style="color: #cbd5e1;">Más resistente, 30% más ligero.</p>
+                    <span class="bento-tag bento-tag-design">Diseño</span>
+                    <h3>Titanio Aeroespacial</h3>
+                    <p>Más resistente, 30% más ligero.</p>
                 </div>
             </div>
             
-            <div class="bento-item box-wide reveal-up" style="background-color: #e0f2fe; --delay: 0.3s;">
+            <div class="bento-item box-wide reveal-up bento-eco">
                 <div class="bento-content">
-                    <span class="bento-tag" style="color: #0284c7; border-color: rgba(2,132,199,0.2);">Ecosistema</span>
+                    <span class="bento-tag bento-tag-eco">Ecosistema</span>
                     <h3>Conexión instantánea.</h3>
                     <p>Acércalo a cualquiera de tus dispositivos y listo.</p>
                 </div>

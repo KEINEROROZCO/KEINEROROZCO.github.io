@@ -63,7 +63,7 @@
 <body>
 
 <!-- SKIP LINK (JS will also add one, this is a fallback) -->
-<a href="#inicio" class="skip-link" style="position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:999999;padding:12px 24px;background:#00f5d4;color:#050816;font-weight:700;border-radius:0 0 8px 8px;text-decoration:none;font-size:0.85rem;transition:top 0.3s" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Ir al contenido principal</a>
+<a href="#inicio" class="skip-link">Ir al contenido principal</a>
 
 <!-- LOADER -->
 <div id="loader">
@@ -172,7 +172,7 @@
                     </span>
                 </a>
                 <a href="cv.html" target="_blank" class="btn-glass" id="hero-btn-cv">
-                    <i class="fa-solid fa-download" style="margin-right: 8px;"></i>
+                    <i class="fa-solid fa-download btn-icon-left"></i>
                     <span>Descargar CV</span>
                 </a>
                 <a href="#contacto" class="btn-glass" id="hero-btn-contact">
@@ -293,7 +293,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#contacto" class="btn-glass" style="margin-top: 24px; display: inline-flex;">
+                <a href="#contacto" class="btn-glass about-cta-btn">
                     <span>Hablemos →</span>
                 </a>
             </div>
@@ -473,7 +473,7 @@
         </h2>
 
         <div class="projects-showcase">
-            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('lumina/index.html', '_blank')" style="cursor: pointer;">
+            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('lumina/index.html', '_blank')">
                 <div class="project-image">
                     <img src="img/project-ecommerce.png" alt="Lumina Elite Tech" loading="lazy">
                     <div class="project-overlay">
@@ -488,7 +488,7 @@
                     <h3>Lumina Elite Tech</h3>
                     <p>Plataforma de alta gama para dispositivos futuristas. Integra generación dinámica con Faker.js, visualización 4K con Unsplash y servicios de email pro.</p>
                     <div class="project-tags">
-                        <span class="tag" style="background: var(--cyan); color: white;">ELITE</span>
+                        <span class="tag tag-elite">ELITE</span>
                         <span class="tag">Faker.js</span>
                         <span class="tag">Unsplash</span>
                         <span class="tag">Resend</span>
@@ -497,7 +497,7 @@
                 <div class="project-card-glow"></div>
             </div>
 
-            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('tienda-barrio/index.html', '_blank')" style="cursor: pointer;">
+            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('tienda-barrio/index.html', '_blank')">
                 <div class="project-image">
                     <img src="img/project-store.png" alt="Tienda de Barrio Online" loading="lazy">
                     <div class="project-overlay">
@@ -521,7 +521,7 @@
                 <div class="project-card-glow"></div>
             </div>
 
-            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('restaurante/index.html', '_blank')" style="cursor: pointer;">
+            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('restaurante/index.html', '_blank')">
                 <div class="project-image">
                     <img src="img/project-restaurant.png" alt="Web para Restaurante" loading="lazy">
                     <div class="project-overlay">
@@ -544,7 +544,7 @@
                 <div class="project-card-glow"></div>
             </div>
 
-            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('peluqueria/index.html', '_blank')" style="cursor: pointer;">
+            <div class="project-card-v2 reveal-item" data-tilt onclick="window.open('peluqueria/index.html', '_blank')">
                 <div class="project-image">
                     <img src="img/project-salon.png" alt="Web para Peluquería" loading="lazy">
                     <div class="project-overlay">
@@ -707,7 +707,7 @@
                     <li class="disabled"><i class="fa-solid fa-xmark"></i> Panel admin</li>
                     <li class="disabled"><i class="fa-solid fa-xmark"></i> Base de datos</li>
                 </ul>
-                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20Básico" target="_blank" class="btn-glass pricing-btn">
+                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20Básico" target="_blank" rel="noopener" class="btn-glass pricing-btn">
                     <span>Solicitar cotización</span>
                 </a>
             </div>
@@ -729,7 +729,7 @@
                     <li><i class="fa-solid fa-check"></i> Formularios avanzados</li>
                     <li><i class="fa-solid fa-check"></i> 1 mes soporte gratis</li>
                 </ul>
-                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20Profesional" target="_blank" class="btn-magic pricing-btn">
+                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20Profesional" target="_blank" rel="noopener" class="btn-magic pricing-btn">
                     <span class="btn-magic-bg"></span>
                     <span class="btn-magic-text"><span>Solicitar cotización</span></span>
                 </a>
@@ -751,14 +751,14 @@
                     <li><i class="fa-solid fa-check"></i> Reportes y analytics</li>
                     <li><i class="fa-solid fa-check"></i> 3 meses soporte gratis</li>
                 </ul>
-                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20E-Commerce" target="_blank" class="btn-glass pricing-btn">
+                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20me%20interesa%20el%20plan%20E-Commerce" target="_blank" rel="noopener" class="btn-glass pricing-btn">
                     <span>Solicitar cotización</span>
                 </a>
             </div>
         </div>
         <p class="pricing-note reveal-item">
             <i class="fa-solid fa-info-circle"></i>
-            Los precios son referenciales. Cada proyecto es único — <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20necesito%20una%20cotización%20personalizada" target="_blank" style="color: var(--cyan);">escríbeme</a> para una cotización personalizada.
+            Los precios son referenciales. Cada proyecto es único — <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20necesito%20una%20cotización%20personalizada" target="_blank" rel="noopener" class="pricing-link">escríbeme</a> para una cotización personalizada.
         </p>
     </div>
 </section>
@@ -891,7 +891,7 @@
             <h2>¿Listo para llevar tu idea al <span class="gradient-text">siguiente nivel</span>?</h2>
             <p>Conversemos sobre tu proyecto. Sin compromisos, sin costos ocultos.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn-magic">
+                <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="btn-magic">
                     <span class="btn-magic-bg"></span>
                     <span class="btn-magic-text">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -937,7 +937,7 @@
                         </svg>
                     </a>
                     <a href="https://wa.me/573143748137?text=Hola%20Keyner%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20hablar%20sobre%20un%20proyecto" class="contact-card" target="_blank" rel="noopener">
-                        <div class="contact-card-icon" style="background: rgba(37, 211, 102, 0.1); color: #25d366;">
+                        <div class="contact-card-icon contact-card-icon--whatsapp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <div>
@@ -961,7 +961,7 @@
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/keiner-orozco-898012331" class="contact-card" target="_blank" rel="noopener">
-                        <div class="contact-card-icon" style="background: rgba(10, 102, 194, 0.1); color: #0a66c2;">
+                        <div class="contact-card-icon contact-card-icon--linkedin">
                             <i class="fa-brands fa-linkedin"></i>
                         </div>
                         <div>

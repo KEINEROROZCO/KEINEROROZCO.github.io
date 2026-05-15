@@ -595,21 +595,7 @@ document.querySelectorAll('.project-card-v2, .service-card-v2').forEach(card => 
     setTimeout(type, 2000);
 })();
 
-// ===== ACCESSIBILITY SKIP LINK =====
-(function addSkipLink() {
-    const skip = document.createElement('a');
-    skip.href = '#inicio';
-    skip.textContent = 'Ir al contenido principal';
-    skip.className = 'skip-link';
-    skip.style.cssText = `
-        position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
-        z-index: 999999; padding: 12px 24px; background: var(--cyan, #00f5d4);
-        color: #050816; font-weight: 700; border-radius: 0 0 8px 8px;
-        text-decoration: none; font-size: 0.85rem; transition: top 0.3s ease;
-    `;
-    skip.addEventListener('focus', () => { skip.style.top = '0'; });
-    skip.addEventListener('blur', () => { skip.style.top = '-100px'; });
-    document.body.prepend(skip);
-})();
+// ===== ACCESSIBILITY: Skip link handled via CSS =====
+// See .skip-link in style.css and HTML fallback
 
 console.log('%c🚀 Keyner Orozco Portfolio v2.0 — Loaded', 'color: #00f5d4; font-size: 14px; font-weight: bold;');

@@ -3,6 +3,37 @@
    Premium Dark Theme with Stunning Visual Effects
    ===================================================== */
 
+/* ===== SKIP LINK ===== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    padding: 12px 24px;
+    background: #00f5d4;
+    color: #050816;
+    font-weight: 700;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: top 0.3s ease;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.btn-icon-left { margin-right: 8px; }
+.about-cta-btn { margin-top: 24px; display: inline-flex; }
+.project-card-v2[onclick] { cursor: pointer; }
+.tag-elite { background: var(--cyan); color: white; }
+.pricing-link { color: var(--cyan); text-decoration: none; }
+.pricing-link:hover { text-decoration: underline; }
+.contact-card-icon--whatsapp { background: rgba(37, 211, 102, 0.1); color: #25d366; }
+.contact-card-icon--linkedin { background: rgba(10, 102, 194, 0.1); color: #0a66c2; }
+
+
 /* ===== CSS VARIABLES ===== */
 :root {
     --bg-primary: #050816;
@@ -230,8 +261,8 @@ img { max-width: 100%; display: block; }
         linear-gradient(rgba(var(--cyan-rgb), 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(var(--cyan-rgb), 0.02) 1px, transparent 1px);
     background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
 /* ===== NOISE LAYER ===== */
@@ -409,6 +440,7 @@ nav ul a.active-link::after {
     position: absolute;
     inset: 0;
     background: rgba(5, 8, 22, 0.95);
+    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -554,6 +586,7 @@ section {
     letter-spacing: 1.5px;
     color: var(--cyan);
     margin-bottom: 32px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 .badge-dot {
@@ -706,6 +739,7 @@ section {
     color: var(--white);
     border: 1px solid rgba(var(--white-rgb), 0.12);
     background: rgba(var(--white-rgb), 0.03);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -727,6 +761,7 @@ section {
     background: rgba(var(--white-rgb), 0.02);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     width: fit-content;
 }
@@ -973,6 +1008,7 @@ section {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
     overflow: hidden;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
@@ -1027,6 +1063,7 @@ section {
     border-right: 1px solid var(--glass-border);
     color: rgba(var(--white-rgb), 0.15);
     font-size: 0.72rem;
+    -webkit-user-select: none;
     user-select: none;
     text-align: right;
     min-width: 48px;
@@ -1228,6 +1265,7 @@ section {
     color: var(--cyan);
     font-size: 0.75rem;
     font-weight: 600;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transform: translateY(20px);
     transition: transform 0.4s var(--ease-out-expo);
@@ -1495,6 +1533,7 @@ section {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     padding: 40px;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
 .form-row {
@@ -2057,6 +2096,7 @@ footer {
     opacity: 0;
     transition: opacity 0.3s ease;
     border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 .whatsapp-float:hover .wa-tooltip { opacity: 1; }

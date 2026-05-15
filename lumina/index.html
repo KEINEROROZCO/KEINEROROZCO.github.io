@@ -43,7 +43,7 @@
                 <div class="search-box" id="search-box">
                     <input type="text" id="search-input" placeholder="Buscar productos...">
                 </div>
-                <button class="icon-btn magnetic-btn" id="search-toggle"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn magnetic-btn" id="search-toggle" aria-label="Buscar productos"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <button class="icon-btn magnetic-btn cart-btn" id="cart-toggle">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-badge" id="cart-count">0</span>
@@ -58,7 +58,7 @@
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
             <h3>Tu Carrito</h3>
-            <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-cart" id="close-cart" aria-label="Cerrar carrito"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
             <div class="empty-cart-msg">Tu carrito está vacío.</div>
@@ -75,7 +75,7 @@
     <!-- Checkout Modal -->
     <div class="modal-overlay" id="checkout-modal">
         <div class="modal-content checkout-content">
-            <button class="close-modal" id="close-checkout"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" id="close-checkout" aria-label="Cerrar checkout"><i class="fa-solid fa-xmark"></i></button>
             <div class="checkout-grid">
                 <div class="checkout-form-col">
                     <h2>Finalizar Pedido</h2>
@@ -104,7 +104,7 @@
     <!-- Quick View Modal -->
     <div class="modal-overlay" id="quick-view-modal">
         <div class="modal-content">
-            <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" id="close-modal" aria-label="Cerrar vista rápida"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body" id="modal-body"></div>
         </div>
     </div>
@@ -266,9 +266,9 @@
                 <h2 class="logo-large">Lumina.</h2>
                 <p>Diseñando el futuro de la tecnología personal. Minimalismo, potencia y elegancia en cada detalle.</p>
                 <div class="social-icons">
-                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="magnetic-btn"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="magnetic-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="magnetic-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="magnetic-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-links-group">

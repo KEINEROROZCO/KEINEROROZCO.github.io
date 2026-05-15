@@ -1,311 +1,354 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html class="dark" lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Next-Gen E-Commerce</title>
-    <meta name="description" content="Lumina - La tienda de e-commerce de próxima generación. Audio espacial, wearables y tecnología de vanguardia.">
-    <meta name="keywords" content="e-commerce, lumina, tech, premium, gadgets, audio, wearables">
-    <meta property="og:title" content="Lumina | Next-Gen E-Commerce">
-    <meta property="og:description" content="Experimenta la nueva generación de tecnología con Lumina.">
-    <meta property="og:image" content="../img/project-ecommerce.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="shortcut icon" href="../img/project-ecommerce.png" type="image/png">
-    
-    <script src="https://cdn.jsdelivr.net/npm/@faker-js/faker@8.4.1/dist/faker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lumina Air Max - Sonido que puedes ver</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#e8c423",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "on-surface-variant": "#b9cacb",
+                        "on-tertiary": "#3b2f00",
+                        "on-primary-fixed": "#002022",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#00dbe7",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#3a494b",
+                        "on-secondary-fixed": "#23005b",
+                        "on-tertiary-container": "#725e00",
+                        "secondary": "#d1bcff",
+                        "background": "#131313",
+                        "secondary-container": "#7000ff",
+                        "on-secondary": "#3c0090",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "outline": "#849495",
+                        "tertiary-fixed": "#ffe173",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#74f5ff",
+                        "on-primary": "#00363a",
+                        "primary-fixed-dim": "#00dbe7",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "primary": "#e1fdff",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "inverse-primary": "#00696f",
+                        "tertiary": "#fff6e4",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-container": "#006a71",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "primary-container": "#00f2ff",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-container": "#fed83a",
+                        "on-primary-fixed-variant": "#004f54"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "edge-margin-mobile": "24px",
+                        "edge-margin-desktop": "80px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-xl": ["80px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.4);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glow-border-cyan {
+            border: 1px solid transparent;
+            background-image: linear-gradient(rgba(32, 31, 31, 0.4), rgba(32, 31, 31, 0.4)), linear-gradient(to bottom right, #00f2ff, transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .glow-border-purple {
+            border: 1px solid transparent;
+            background-image: linear-gradient(rgba(32, 31, 31, 0.4), rgba(32, 31, 31, 0.4)), linear-gradient(to bottom right, #7000ff, transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+    </style>
 </head>
-<body>
 
-    <!-- Minimalist Loader -->
-    <div id="loader" class="loader">
-        <div class="loader-circle"></div>
-        <div class="loader-text">LUMINA</div>
-    </div>
-
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Lumina.</a>
-            <nav class="nav-links">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#experiencia" class="nav-link">Experiencia</a>
-                <a href="#coleccion" class="nav-link">Colección</a>
-                <a href="#filosofia" class="nav-link">Filosofía</a>
-            </nav>
-            <div class="nav-actions">
-                <div class="search-box" id="search-box">
-                    <input type="text" id="search-input" placeholder="Buscar productos...">
-                </div>
-                <button class="icon-btn magnetic-btn" id="search-toggle" aria-label="Buscar productos"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="icon-btn magnetic-btn cart-btn" id="cart-toggle">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="cart-badge" id="cart-count">0</span>
+<body
+    class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full bg-surface/10 backdrop-blur-[20px] border-b border-white/20 z-50">
+        <div
+            class="flex justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-4 w-full max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md-mobile md:text-headline-md tracking-tighter text-on-surface">
+                Lumina Air Max
+            </div>
+            <div class="hidden md:flex items-center gap-stack-lg">
+                <a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1 hover:text-primary-fixed-dim transition-colors duration-300"
+                    href="#">Sound</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                    href="#">Design</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                    href="#">Specs</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                    href="#">Reviews</a>
+            </div>
+            <button
+                class="hidden md:block bg-primary-container/10 border border-primary-container text-primary-fixed-dim px-6 py-2 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/20 hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] scale-95 active:scale-90 transition-all duration-300">
+                Buy Now
+            </button>
+            <button class="md:hidden text-on-surface">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-[100vh] flex items-center justify-center pt-24 pb-section-gap overflow-hidden">
+        <!-- Atmospheric Glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-container/20 rounded-full blur-[120px] z-0 pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary-container/15 rounded-full blur-[100px] z-0 pointer-events-none">
+        </div>
+        <div class="absolute inset-0 z-0">
+            <img alt="Lumina Air Max Hero" class="w-full h-full object-cover opacity-80 mix-blend-lighten"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBls3PXtBQRp4kA6DBbeit0pAFqatgk0GrIuuszU38nKX-L2wk3YbrHbwuxee-RTINaL_h0ZxF7DCe6u3KSNAhokpLWxnFL4tw8reyRjSsyQ1-z6pQDDnjm2gCkHz2cSE6p59GE9uY_0R1sFJbSPGyg5JqETHXeiMIYkf0Lk22X6bojfR6seIvSlSmDNMtUXXuj3bWU0CW37-Y083UzyV9HefmaoWxLQ54dsRJVGW-TxHecJdfgPfGcj81n_2RJzuKmk35HuOo6At8" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+        </div>
+        <div
+            class="relative z-10 flex flex-col items-center text-center px-edge-margin-mobile md:px-edge-margin-desktop max-w-4xl mx-auto mt-20">
+            <h1
+                class="font-display-xl text-[56px] leading-[64px] md:text-display-xl text-on-surface mb-stack-md drop-shadow-2xl">
+                Sonido que <br class="md:hidden" /><span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed-dim to-secondary-fixed-dim">puedes
+                    ver</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">
+                Adéntrate en el futuro del audio de alta fidelidad. Ingeniería aeroespacial y procesamiento cuántico
+                convergen en una obra maestra acústica diseñada para los más exigentes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-stack-md w-full sm:w-auto">
+                <button
+                    class="bg-primary-container/20 border border-primary-container text-primary-fixed-dim px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container/30 hover:shadow-[0_0_20px_rgba(0,242,255,0.5)] transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
+                    Comprar ahora
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
                 </button>
-                <a href="../index.html" class="btn-primary magnetic-btn">Portafolio</a>
+                <button
+                    class="glass-panel text-on-surface px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-surface-container/60 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 0;">play_circle</span>
+                    Ver video
+                </button>
             </div>
         </div>
     </header>
-
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-overlay" id="cart-overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Tu Carrito</h3>
-            <button class="close-cart" id="close-cart" aria-label="Cerrar carrito"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <div class="empty-cart-msg">Tu carrito está vacío.</div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cart-total-price">$0.00</span>
+    <!-- Feature Section (Bento Grid) -->
+    <section class="py-section-gap px-edge-margin-mobile md:px-edge-margin-desktop relative">
+        <div class="max-w-container-max mx-auto">
+            <div class="mb-stack-lg text-center md:text-left">
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Arquitectura
+                    Sónica</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Tecnología sin precedentes en cada
+                    milímetro.</p>
             </div>
-            <button class="btn-primary checkout-btn" id="checkout-main-btn">Proceder al pago</button>
-        </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div class="modal-overlay" id="checkout-modal">
-        <div class="modal-content checkout-content">
-            <button class="close-modal" id="close-checkout" aria-label="Cerrar checkout"><i class="fa-solid fa-xmark"></i></button>
-            <div class="checkout-grid">
-                <div class="checkout-form-col">
-                    <h2>Finalizar Pedido</h2>
-                    <form id="checkout-form">
-                        <div class="input-row">
-                            <div class="input-group"><label>Nombre Completo</label><input type="text" id="cust-name" required placeholder="Ej: John Doe"></div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md md:gap-stack-lg">
+                <!-- Box 1: Procesador Cuántico -->
+                <div
+                    class="md:col-span-8 glow-border-cyan rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-[80px] -mr-20 -mt-20 transition-opacity group-hover:opacity-100 opacity-50">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-stack-md border border-primary-container/30 text-primary-fixed-dim">
+                            <span class="material-symbols-outlined text-3xl">memory</span>
                         </div>
-                        <div class="input-row">
-                            <div class="input-group"><label>Email</label><input type="email" id="cust-email" required placeholder="tu@email.com"></div>
+                        <div class="mt-auto">
+                            <h3
+                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
+                                Procesador Cuántico</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                                Potencia extrema de cálculo en tiempo real. Analiza y optimiza el espectro sonoro
+                                100,000 veces por segundo para una claridad cristalina absoluta.
+                            </p>
                         </div>
-                        <div class="input-row">
-                            <div class="input-group"><label>Dirección de Envío</label><input type="text" id="cust-address" required placeholder="Calle, Ciudad, Código Postal"></div>
+                    </div>
+                </div>
+                <!-- Box 2: 40 horas non-stop -->
+                <div
+                    class="md:col-span-4 glow-border-purple rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px]">
+                    <div
+                        class="absolute bottom-0 right-0 w-48 h-48 bg-secondary-container/10 rounded-full blur-[60px] -mr-10 -mb-10 transition-opacity group-hover:opacity-100 opacity-50">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-stack-md border border-secondary-container/30 text-secondary-fixed-dim">
+                            <span class="material-symbols-outlined text-3xl">battery_charging_full</span>
                         </div>
-                        <button type="submit" class="btn-primary checkout-confirm-btn">Confirmar Compra</button>
-                    </form>
+                        <div class="mt-auto">
+                            <h3
+                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
+                                40 horas non-stop</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Autonomía extendida. Energía inagotable para viajes intercontinentales sin necesidad de
+                                recarga.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="checkout-summary-col">
-                    <h3>Resumen</h3>
-                    <div id="checkout-summary-list"></div>
-                    <div class="summary-total"><span>Total a pagar</span><span id="summary-total-price">$0.00</span></div>
+                <!-- Box 3: Titanio Aeroespacial -->
+                <div
+                    class="md:col-span-5 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
+                            <span class="material-symbols-outlined text-3xl">rocket_launch</span>
+                        </div>
+                        <div class="mt-auto">
+                            <h3
+                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
+                                Titanio Aeroespacial</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Forjados para la eternidad. Una aleación ultraligera que ofrece durabilidad extrema sin
+                                comprometer el confort prolongado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Box 4: Conexión instantánea -->
+                <div
+                    class="md:col-span-7 glass-panel rounded-xl p-stack-lg relative overflow-hidden group flex flex-col justify-between min-h-[300px] border border-white/5 hover:border-white/20 transition-colors duration-300">
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-bright/50 flex items-center justify-center mb-stack-md border border-outline-variant text-on-surface">
+                            <span class="material-symbols-outlined text-3xl">wifi_tethering</span>
+                        </div>
+                        <div class="mt-auto">
+                            <h3
+                                class="font-headline-md text-[24px] leading-[32px] md:text-headline-md text-on-surface mb-2">
+                                Conexión instantánea</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                                Integración absoluta en tu ecosistema digital. Cambios de dispositivo fluidos e
+                                invisibles gracias a nuestro protocolo de transmisión propietario de baja latencia.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <!-- Spacer to prevent content from hiding behind sticky bar -->
+    <div class="h-32 w-full"></div>
+    <!-- Sticky Bottom Bar -->
+    <div
+        class="fixed bottom-0 left-0 w-full z-40 bg-surface/80 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        <div
+            class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-stack-lg w-full md:w-auto justify-between md:justify-start">
+                <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Precio
+                        Exclusivo</span>
+                    <span class="font-headline-md text-[24px] leading-[32px] md:text-[32px] text-on-surface">$499
+                        USD</span>
+                </div>
+                <div class="flex items-center gap-3 border-l border-white/10 pl-stack-lg">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:block">COLOR:</span>
+                    <button aria-label="Titanium"
+                        class="w-8 h-8 rounded-full bg-[#8A8D91] border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                    <button aria-label="Neon Cyan"
+                        class="w-8 h-8 rounded-full bg-primary-container border-2 border-white shadow-[0_0_10px_rgba(0,242,255,0.5)] transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                    <button aria-label="Purple"
+                        class="w-8 h-8 rounded-full bg-secondary-container border-2 border-transparent hover:border-white transition-all outline-none focus:border-white ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-surface-tint"></button>
+                </div>
+            </div>
+            <button
+                class="w-full md:w-auto bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-fixed shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all duration-300">
+                Finalizar Compra
+            </button>
         </div>
     </div>
-
-    <!-- Quick View Modal -->
-    <div class="modal-overlay" id="quick-view-modal">
-        <div class="modal-content">
-            <button class="close-modal" id="close-modal" aria-label="Cerrar vista rápida"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-body" id="modal-body"></div>
+    <!-- Footer -->
+    <footer
+        class="w-full bg-surface-container-lowest border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-edge-margin-mobile md:px-edge-margin-desktop py-stack-lg gap-stack-md relative z-10 pb-32 md:pb-stack-lg">
+        <div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Lumina Audio
         </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-bg-glow"></div>
-        <div class="hero-content">
-            <h1 class="hero-title reveal-text">Sonido que<br>puedes ver.</h1>
-            <p class="hero-subtitle reveal-up hero-subtitle-delay">Experimenta la nueva generación de audio espacial. Diseño ultraligero y fidelidad acústica sin precedentes.</p>
-            <div class="hero-actions reveal-up hero-actions-delay">
-                <button class="btn-primary magnetic-btn" onclick="CartService.add(1)">Comprar ahora</button>
-                <a href="#experiencia" class="btn-secondary magnetic-btn">Descubrir más</a>
-            </div>
+        <div class="flex flex-wrap justify-center gap-stack-md md:gap-stack-lg">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+                href="#">Privacy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+                href="#">Terms</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+                href="#">Support</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100"
+                href="#">Contact</a>
         </div>
-        <div class="hero-visual">
-            <div class="image-wrapper" id="hero-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=90" alt="Lumina Air Max Premium Headphones" class="hero-img floating">
-                <div class="hero-img-glow"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Infinite Marquee -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>NUEVA COLECCIÓN 2026</span> &bull; 
-            <span>AUDIO ESPACIAL 3D</span> &bull; 
-            <span>DISEÑO MINIMALISTA</span> &bull; 
-            <span>CANCELACIÓN DE RUIDO ACTIVA</span> &bull; 
-            <span>NUEVA COLECCIÓN 2026</span> &bull; 
-            <span>AUDIO ESPACIAL 3D</span> &bull; 
-            <span>DISEÑO MINIMALISTA</span> &bull; 
-            <span>CANCELACIÓN DE RUIDO ACTIVA</span> &bull; 
-        </div>
-    </div>
-
-    <!-- Bento Box Features -->
-    <section id="experiencia" class="bento-section">
-        <div class="section-heading text-center reveal-up">
-            <h2 class="massive-text">Redefiniendo<br>lo posible.</h2>
-        </div>
-        
-        <div class="bento-grid">
-            <div class="bento-item box-large reveal-up bento-tech">
-                <div class="bento-content">
-                    <span class="bento-tag">Tecnología</span>
-                    <h3>Procesador Cuántico</h3>
-                    <p>Procesamiento de 24 núcleos que analiza el entorno 100,000 veces por segundo para una interacción perfecta.</p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Procesador cuántico" class="bento-img bento-float bento-img-tech">
-            </div>
-            
-            <div class="bento-item box-medium reveal-up bento-battery">
-                <div class="bento-content">
-                    <span class="bento-tag">Batería</span>
-                    <h3>40 horas non-stop.</h3>
-                    <p>Autonomía líder en la industria con carga ultrarrápida.</p>
-                </div>
-                <div class="bento-icon"><i class="fa-solid fa-battery-full"></i></div>
-            </div>
-            
-            <div class="bento-item box-medium reveal-up bento-design">
-                <div class="bento-content">
-                    <span class="bento-tag bento-tag-design">Diseño</span>
-                    <h3>Titanio Aeroespacial</h3>
-                    <p>Más resistente, 30% más ligero.</p>
-                </div>
-            </div>
-            
-            <div class="bento-item box-wide reveal-up bento-eco">
-                <div class="bento-content">
-                    <span class="bento-tag bento-tag-eco">Ecosistema</span>
-                    <h3>Conexión instantánea.</h3>
-                    <p>Acércalo a cualquiera de tus dispositivos y listo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sticky Showcase Section -->
-    <section class="showcase-section">
-        <div class="showcase-container">
-            <div class="showcase-sticky">
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1000&q=90" alt="Lumina headphones showcase" class="showcase-img showcase-float">
-            </div>
-            <div class="showcase-content">
-                <div class="showcase-block reveal-left">
-                    <h3 class="gradient-text-alt">01 / Inmersión</h3>
-                    <h2>Siente cada instrumento.</h2>
-                    <p>Controladores de altavoz personalizados de 50 mm recubiertos de grafeno para agudos nítidos y graves que retumban en el pecho sin distorsión.</p>
-                </div>
-                <div class="showcase-block reveal-left">
-                    <h3 class="gradient-text-alt">02 / Confort</h3>
-                    <h2>Como no llevar nada.</h2>
-                    <p>Almohadillas de espuma viscoelástica envueltas en tela de malla transpirable que se adaptan perfectamente a la forma de tu cabeza.</p>
-                </div>
-                <div class="showcase-block reveal-left">
-                    <h3 class="gradient-text-alt">03 / Control</h3>
-                    <h2>Todo en un toque.</h2>
-                    <p>Controles táctiles capacitivos intuitivos. Desliza para ajustar el volumen, toca para pausar, todo sin sacar el teléfono.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Collection Grid -->
-    <section id="coleccion" class="collection-section">
-        <div class="section-heading text-center reveal-up">
-            <h2 class="massive-text">La Colección.</h2>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Ver Todo</button>
-                <button class="filter-btn" data-filter="audio">Audio</button>
-                <button class="filter-btn" data-filter="wearables">Wearables</button>
-                <button class="filter-btn" data-filter="gaming">Gaming Setup</button>
-            </div>
-        </div>
-        
-        <div class="catalog-grid" id="catalog-grid">
-            <!-- JS Injected Products -->
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="filosofia" class="testimonials-modern">
-        <div class="section-heading text-center reveal-up">
-            <h2>Voces de nuestros usuarios</h2>
-        </div>
-        <div class="testim-container">
-            <div class="testim-track">
-                <div class="testim-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"El diseño industrial es de otro nivel. Parecen una pieza de arte de museo que además suena increíble."</p>
-                    <strong>- Revista TechTrend</strong>
-                </div>
-                <div class="testim-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Simplemente perfectos. El peso es ideal, la batería no se acaba nunca y el sonido es puro."</p>
-                    <strong>- Marco P.</strong>
-                </div>
-                <div class="testim-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"He probado todas las marcas del mercado y ninguna logra esta combinación de estética y funcionalidad."</p>
-                    <strong>- AudioPro Blog</strong>
-                </div>
-                <div class="testim-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"La interacción con el ecosistema es mágica. Fue sacarlos de la caja y ya estaban sonando."</p>
-                    <strong>- Sarah T.</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modern Footer -->
-    <footer class="footer-modern">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2 class="logo-large">Lumina.</h2>
-                <p>Diseñando el futuro de la tecnología personal. Minimalismo, potencia y elegancia en cada detalle.</p>
-                <div class="social-icons">
-                    <a href="#" class="magnetic-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="magnetic-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="magnetic-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-links-group">
-                <h4>Explorar</h4>
-                <a href="#">Audio Premium</a>
-                <a href="#">Smartwatches</a>
-                <a href="#">Estaciones Gaming</a>
-                <a href="#">Accesorios</a>
-            </div>
-            <div class="footer-links-group">
-                <h4>Soporte</h4>
-                <a href="#">Centro de Ayuda</a>
-                <a href="#">Garantía Lumina Care</a>
-                <a href="#">Estado de Pedido</a>
-                <a href="#">Devoluciones</a>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Mantente Informado</h4>
-                <p>Recibe noticias sobre nuevos lanzamientos antes que nadie.</p>
-                <div class="input-group">
-                    <input type="email" placeholder="Ingresa tu email">
-                    <button class="btn-primary">Suscribir</button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Lumina E-Commerce Demo. Desarrollado por Keyner Orozco.</p>
-            <div class="legal-links">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </div>
+        <div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 Lumina Audio. All rights reserved.
         </div>
     </footer>
-
-    <div id="toast-container" class="toast-container"></div>
-
-    <script src="config.js"></script>
-    <script src="script.js"></script>
 </body>
+
 </html>
